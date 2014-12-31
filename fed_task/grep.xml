@@ -14,10 +14,9 @@
 		<MainClass>grep</MainClass>
 		<OtherArgs>6G</OtherArgs>
 		<Arg0>grepOut</Arg0>
-		<Arg1>unpredict</Arg1>
+		<Arg1>d*</Arg1>
 	</RegionCloud>
 
-<!--
 	<RegionCloud>
 		<Name>c13</Name>
 		<CloudAddress>10.3.1.13</CloudAddress>
@@ -26,7 +25,7 @@
 		<MainClass>grep</MainClass>
 		<OtherArgs>6G</OtherArgs>
 		<Arg0>grepOut</Arg0>
-		<Arg1>unpredict</Arg1>
+		<Arg1>d*</Arg1>
 	</RegionCloud>
 
 	<RegionCloud>
@@ -37,8 +36,9 @@
 		<MainClass>grep</MainClass>
 		<OtherArgs>6G</OtherArgs>
 		<Arg0>grepOut</Arg0>
-		<Arg1>unpredict</Arg1>
+		<Arg1>d*</Arg1>
 	</RegionCloud>
+<!--
 	<RegionCloud>
 		<Name>b08</Name>
 		<CloudAddress>10.2.0.8</CloudAddress>
