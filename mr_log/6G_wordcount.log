@@ -1,0 +1,803 @@
+Deleted new_wc_out
+input : 6G
+output : new_wc_out
+Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/
+###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+fed = true
+mFedFlag = true
+Tag : RegionCloudListenPort use default value : 55679
+regJarFileName = word_count_new_api.jar
+Tag : MainClass use default value : none
+Tag : HDFSInputPath use default value : none
+Tag : HDFSOutputPath use default value : c07_WordCount-YARN_OUT_20141231222848
+Tag : Arg2 use default value : none
+Tag : Arg3 use default value : none
+Tag : Arg4 use default value : none
+Tag : Arg5 use default value : none
+Tag : Arg6 use default value : none
+Tag : Arg7 use default value : none
+Tag : Arg8 use default value : none
+Tag : Arg9 use default value : none
+Tag : MainClass use default value : none
+Tag : HDFSInputPath use default value : none
+Tag : HDFSOutputPath use default value : c13_WordCount-YARN_OUT_20141231222848
+Tag : Arg2 use default value : none
+Tag : Arg3 use default value : none
+Tag : Arg4 use default value : none
+Tag : Arg5 use default value : none
+Tag : Arg6 use default value : none
+Tag : Arg7 use default value : none
+Tag : Arg8 use default value : none
+Tag : Arg9 use default value : none
+Tag : MainClass use default value : none
+Tag : HDFSInputPath use default value : none
+Tag : HDFSOutputPath use default value : c19_WordCount-YARN_OUT_20141231222848
+Tag : Arg2 use default value : none
+Tag : Arg3 use default value : none
+Tag : Arg4 use default value : none
+Tag : Arg5 use default value : none
+Tag : Arg6 use default value : none
+Tag : Arg7 use default value : none
+Tag : Arg8 use default value : none
+Tag : Arg9 use default value : none
+make FedRegionCloudJobs
+init FedRegionCloudJob
+init FedRegionCloudJob
+init FedRegionCloudJob
+add path [c07_WordCount-YARN_OUT_20141231222848/] in InputPaths
+add path [c13_WordCount-YARN_OUT_20141231222848/] in InputPaths
+add path [c19_WordCount-YARN_OUT_20141231222848/] in InputPaths
+FedRegionCloudJobs size : 3
+make FedCloudMonitorClients
+init JarCopyJob 
+init JarCopyJob 
+init JarCopyJob 
+Run AS Top Cloud
+Start Jar copy jobs
+run JarCopyJob 
+run JarCopyJob 
+make region cloud command
+run JarCopyJob 
+make region cloud command
+JarCopyJob cmd scp /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/word_count_new_api.jar 10.3.1.13:/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/
+make region cloud command
+JarCopyJob cmd scp /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/word_count_new_api.jar 10.3.1.7:/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/
+Wait For Jar copy finishing
+JarCopyJob cmd scp /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/word_count_new_api.jar 10.3.1.19:/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/
+Jar copy Jobs finished
+TopCloud Report : RegionCloud Start Time = 1420036132047(ms)
+Start FedRegionCloudJobs
+run FedRegionCloudJob
+make region cloud command
+run FedRegionCloudJob
+make region cloud command
+run FedRegionCloudJob
+make region cloud command
+Arg 0 = 6G
+Arg 1 = dummy
+Arg 2 = none
+Arg 3 = none
+Arg 4 = none
+Arg 5 = none
+Arg 6 = none
+Arg 7 = none
+Arg 8 = none
+Arg 9 = none
+Arg 0 = 6G
+Start FedCloudMonitorClient
+Arg 1 = dummy
+RegionCloud cmd ssh 10.3.1.19 /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop jar /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/word_count_new_api.jar  -DregionCloud=on  -DtopCloudHDFS=hdfs://c02:39100/  -DregionCloudServerPort=55679  -DregionCloudOutput=c19_WordCount-YARN_OUT_20141231222848  -DregionCloudHadoopHome=/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1 wordcount1 6G dummy 
+Arg 0 = 6G
+Arg 2 = none
+Arg 1 = dummy
+Arg 3 = none
+Arg 4 = none
+Arg 2 = none
+Arg 5 = none
+Arg 6 = none
+Arg 7 = none
+Arg 8 = none
+Arg 9 = none
+RegionCloud cmd ssh 10.3.1.7 /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop jar /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/word_count_new_api.jar  -DregionCloud=on  -DtopCloudHDFS=hdfs://c02:39100/  -DregionCloudServerPort=55679  -DregionCloudOutput=c07_WordCount-YARN_OUT_20141231222848  -DregionCloudHadoopHome=/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1 wordcount1 6G dummy 
+Wait For FedRegionCloudJob Join
+Arg 3 = none
+Arg 4 = none
+Arg 5 = none
+Arg 6 = none
+Arg 7 = none
+Arg 8 = none
+Arg 9 = none
+RegionCloud cmd ssh 10.3.1.13 /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop jar /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/word_count_new_api.jar  -DregionCloud=on  -DtopCloudHDFS=hdfs://c02:39100/  -DregionCloudServerPort=55679  -DregionCloudOutput=c13_WordCount-YARN_OUT_20141231222848  -DregionCloudHadoopHome=/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1 wordcount1 6G dummy 
+connect to 10.3.1.13 failed reconnect 
+connect to 10.3.1.19 failed reconnect 
+connect to 10.3.1.7 failed reconnect 
+WordCount-YARN-c19-10.3.1.19>input : 6G
+WordCount-YARN-c19-10.3.1.19>output : dummy
+WordCount-YARN-c19-10.3.1.19>Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+WordCount-YARN-c19-10.3.1.19>###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+WordCount-YARN-c19-10.3.1.19>fed = off
+WordCount-YARN-c19-10.3.1.19>mFedFlag = false
+WordCount-YARN-c19-10.3.1.19>Run AS Region Cloud
+WordCount-YARN-c19-10.3.1.19>----------------------------------
+WordCount-YARN-c19-10.3.1.19>|        RegionCloud Mode        |
+WordCount-YARN-c19-10.3.1.19>----------------------------------
+WordCount-YARN-c19-10.3.1.19>Select ProxyReducer : ncku.hpds.fed.MRv2.ProxySelector.ProxyReducerTextInt
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO client.RMProxy: Connecting to ResourceManager at c19/10.3.1.19:40832
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO input.FileInputFormat: Total input paths to process : 2
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO mapreduce.JobSubmitter: number of splits:18
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1419923761585_0045
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO impl.YarnClientImpl: Submitted application application_1419923761585_0045
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO mapreduce.Job: The url to track the job: http://c19:40888/proxy/application_1419923761585_0045/
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:28 INFO mapreduce.Job: Running job: job_1419923761585_0045
+connect to 10.3.1.13 failed reconnect 
+connect to 10.3.1.7 failed reconnect 
+Client to 10.3.1.19  mRunFlag = true
+WordCount-YARN-c13-10.3.1.13>input : 6G
+WordCount-YARN-c13-10.3.1.13>output : dummy
+WordCount-YARN-c13-10.3.1.13>Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+WordCount-YARN-c13-10.3.1.13>###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+WordCount-YARN-c13-10.3.1.13>fed = off
+WordCount-YARN-c13-10.3.1.13>mFedFlag = false
+WordCount-YARN-c07-10.3.1.7>input : 6G
+WordCount-YARN-c07-10.3.1.7>output : dummy
+WordCount-YARN-c07-10.3.1.7>Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+WordCount-YARN-c07-10.3.1.7>###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+WordCount-YARN-c07-10.3.1.7>fed = off
+WordCount-YARN-c07-10.3.1.7>mFedFlag = false
+WordCount-YARN-c13-10.3.1.13>Run AS Region Cloud
+WordCount-YARN-c13-10.3.1.13>----------------------------------
+WordCount-YARN-c13-10.3.1.13>|        RegionCloud Mode        |
+WordCount-YARN-c13-10.3.1.13>----------------------------------
+WordCount-YARN-c13-10.3.1.13>Select ProxyReducer : ncku.hpds.fed.MRv2.ProxySelector.ProxyReducerTextInt
+WordCount-YARN-c07-10.3.1.7>Run AS Region Cloud
+WordCount-YARN-c07-10.3.1.7>----------------------------------
+WordCount-YARN-c07-10.3.1.7>|        RegionCloud Mode        |
+WordCount-YARN-c07-10.3.1.7>----------------------------------
+WordCount-YARN-c07-10.3.1.7>Select ProxyReducer : ncku.hpds.fed.MRv2.ProxySelector.ProxyReducerTextInt
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:41 INFO client.RMProxy: Connecting to ResourceManager at c13/10.3.1.13:40832
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:16 INFO client.RMProxy: Connecting to ResourceManager at c07/10.3.1.7:40832
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:42 INFO input.FileInputFormat: Total input paths to process : 2
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:17 INFO input.FileInputFormat: Total input paths to process : 2
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:17 INFO mapreduce.JobSubmitter: number of splits:18
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:42 INFO mapreduce.JobSubmitter: number of splits:18
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:17 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1418720423667_0179
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:42 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1419945164001_0035
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:17 INFO impl.YarnClientImpl: Submitted application application_1418720423667_0179
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:17 INFO mapreduce.Job: The url to track the job: http://c07:40888/proxy/application_1418720423667_0179/
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:17 INFO mapreduce.Job: Running job: job_1418720423667_0179
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:42 INFO impl.YarnClientImpl: Submitted application application_1419945164001_0035
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:42 INFO mapreduce.Job: The url to track the job: http://c13:40888/proxy/application_1419945164001_0035/
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:42 INFO mapreduce.Job: Running job: job_1419945164001_0035
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:32 INFO mapreduce.Job: Job job_1419923761585_0045 running in uber mode : false
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:32 INFO mapreduce.Job:  map 0% reduce 0%
+Client to 10.3.1.13  mRunFlag = true
+Client to 10.3.1.7  mRunFlag = true
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:45 INFO mapreduce.Job: Job job_1419945164001_0035 running in uber mode : false
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:45 INFO mapreduce.Job:  map 0% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:35 INFO mapreduce.Job: Task Id : attempt_1419923761585_0045_m_000014_0, Status : FAILED
+WordCount-YARN-c19-10.3.1.19>java.io.FileNotFoundException: JAR entry mapred-default.xml not found in /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.4.1.jar
+WordCount-YARN-c19-10.3.1.19>
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:35 INFO mapreduce.Job: Task Id : attempt_1419923761585_0045_m_000016_0, Status : FAILED
+WordCount-YARN-c19-10.3.1.19>java.io.FileNotFoundException: JAR entry mapred-default.xml not found in /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.4.1.jar
+WordCount-YARN-c19-10.3.1.19>
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:21 INFO mapreduce.Job: Job job_1418720423667_0179 running in uber mode : false
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:21 INFO mapreduce.Job:  map 0% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:23 INFO mapreduce.Job: Task Id : attempt_1418720423667_0179_m_000003_0, Status : FAILED
+WordCount-YARN-c07-10.3.1.7>java.io.FileNotFoundException: JAR entry mapred-default.xml not found in /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.4.1.jar
+WordCount-YARN-c07-10.3.1.7>
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:23 INFO mapreduce.Job: Task Id : attempt_1418720423667_0179_m_000005_0, Status : FAILED
+WordCount-YARN-c07-10.3.1.7>java.io.FileNotFoundException: JAR entry mapred-default.xml not found in /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.4.1.jar
+WordCount-YARN-c07-10.3.1.7>
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:48 INFO mapreduce.Job: Task Id : attempt_1419945164001_0035_m_000005_0, Status : FAILED
+WordCount-YARN-c13-10.3.1.13>java.io.FileNotFoundException: JAR entry mapred-default.xml not found in /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/share/hadoop/mapreduce/hadoop-mapreduce-client-core-2.4.1.jar
+WordCount-YARN-c13-10.3.1.13>
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:52 INFO mapreduce.Job:  map 6% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:42 INFO mapreduce.Job:  map 4% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:29 INFO mapreduce.Job:  map 6% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:44 INFO mapreduce.Job:  map 10% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:30 INFO mapreduce.Job:  map 18% reduce 0%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:55 INFO mapreduce.Job:  map 7% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:45 INFO mapreduce.Job:  map 27% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:31 INFO mapreduce.Job:  map 20% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:46 INFO mapreduce.Job:  map 29% reduce 0%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:57 INFO mapreduce.Job:  map 8% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:47 INFO mapreduce.Job:  map 34% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:33 INFO mapreduce.Job:  map 26% reduce 0%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:27:58 INFO mapreduce.Job:  map 26% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:48 INFO mapreduce.Job:  map 35% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:34 INFO mapreduce.Job:  map 35% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:50 INFO mapreduce.Job:  map 37% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:37 INFO mapreduce.Job:  map 37% reduce 0%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:01 INFO mapreduce.Job:  map 30% reduce 0%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:51 INFO mapreduce.Job:  map 44% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:38 INFO mapreduce.Job:  map 39% reduce 0%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:03 INFO mapreduce.Job:  map 31% reduce 4%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:53 INFO mapreduce.Job:  map 50% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:40 INFO mapreduce.Job:  map 44% reduce 0%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:04 INFO mapreduce.Job:  map 40% reduce 4%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:54 INFO mapreduce.Job:  map 51% reduce 0%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:41 INFO mapreduce.Job:  map 50% reduce 4%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:06 INFO mapreduce.Job:  map 42% reduce 4%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:55 INFO mapreduce.Job:  map 53% reduce 6%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:42 INFO mapreduce.Job:  map 52% reduce 4%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:07 INFO mapreduce.Job:  map 42% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:56 INFO mapreduce.Job:  map 55% reduce 6%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:43 INFO mapreduce.Job:  map 55% reduce 4%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:08 INFO mapreduce.Job:  map 44% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:57 INFO mapreduce.Job:  map 60% reduce 6%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:44 INFO mapreduce.Job:  map 59% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:58 INFO mapreduce.Job:  map 60% reduce 7%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:10 INFO mapreduce.Job:  map 45% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:28:59 INFO mapreduce.Job:  map 67% reduce 7%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:46 INFO mapreduce.Job:  map 62% reduce 6%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:11 INFO mapreduce.Job:  map 52% reduce 6%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:47 INFO mapreduce.Job:  map 69% reduce 9%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:01 INFO mapreduce.Job:  map 67% reduce 9%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:48 INFO mapreduce.Job:  map 71% reduce 9%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:02 INFO mapreduce.Job:  map 68% reduce 9%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:49 INFO mapreduce.Job:  map 73% reduce 9%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:14 INFO mapreduce.Job:  map 56% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:03 INFO mapreduce.Job:  map 73% reduce 9%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:50 INFO mapreduce.Job:  map 75% reduce 15%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:16 INFO mapreduce.Job:  map 57% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:05 INFO mapreduce.Job:  map 77% reduce 9%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:52 INFO mapreduce.Job:  map 77% reduce 15%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:17 INFO mapreduce.Job:  map 62% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:06 INFO mapreduce.Job:  map 80% reduce 9%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:53 INFO mapreduce.Job:  map 80% reduce 17%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:07 INFO mapreduce.Job:  map 86% reduce 11%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:08 INFO mapreduce.Job:  map 88% reduce 11%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:20 INFO mapreduce.Job:  map 69% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:09 INFO mapreduce.Job:  map 90% reduce 11%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:56 INFO mapreduce.Job:  map 83% reduce 19%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:10 INFO mapreduce.Job:  map 90% reduce 22%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:11 INFO mapreduce.Job:  map 93% reduce 22%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:23 INFO mapreduce.Job:  map 71% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:12 INFO mapreduce.Job:  map 100% reduce 22%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:28:59 INFO mapreduce.Job:  map 84% reduce 19%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:24 INFO mapreduce.Job:  map 73% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:13 INFO mapreduce.Job:  map 100% reduce 28%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:25 INFO mapreduce.Job:  map 76% reduce 6%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:26 INFO mapreduce.Job:  map 81% reduce 6%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:02 INFO mapreduce.Job:  map 87% reduce 19%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:27 INFO mapreduce.Job:  map 87% reduce 6%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:16 INFO mapreduce.Job:  map 100% reduce 68%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:03 INFO mapreduce.Job:  map 91% reduce 19%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:28 INFO mapreduce.Job:  map 89% reduce 19%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:04 INFO mapreduce.Job:  map 100% reduce 19%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:29 INFO mapreduce.Job:  map 100% reduce 19%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:05 INFO mapreduce.Job:  map 100% reduce 24%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:19 INFO mapreduce.Job:  map 100% reduce 72%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:31 INFO mapreduce.Job:  map 100% reduce 67%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:08 INFO mapreduce.Job:  map 100% reduce 68%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:22 INFO mapreduce.Job:  map 100% reduce 75%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:34 INFO mapreduce.Job:  map 100% reduce 70%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:11 INFO mapreduce.Job:  map 100% reduce 72%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:25 INFO mapreduce.Job:  map 100% reduce 79%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:37 INFO mapreduce.Job:  map 100% reduce 73%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:14 INFO mapreduce.Job:  map 100% reduce 75%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:28 INFO mapreduce.Job:  map 100% reduce 83%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:40 INFO mapreduce.Job:  map 100% reduce 77%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:17 INFO mapreduce.Job:  map 100% reduce 78%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:31 INFO mapreduce.Job:  map 100% reduce 87%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:43 INFO mapreduce.Job:  map 100% reduce 80%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:20 INFO mapreduce.Job:  map 100% reduce 81%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:34 INFO mapreduce.Job:  map 100% reduce 91%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:46 INFO mapreduce.Job:  map 100% reduce 85%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:23 INFO mapreduce.Job:  map 100% reduce 84%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:37 INFO mapreduce.Job:  map 100% reduce 96%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:49 INFO mapreduce.Job:  map 100% reduce 88%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:39 INFO mapreduce.Job:  map 100% reduce 100%
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:39 INFO mapreduce.Job: Job job_1419923761585_0045 completed successfully
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:39 INFO mapreduce.Job: Counters: 53
+WordCount-YARN-c19-10.3.1.19>	File System Counters
+WordCount-YARN-c19-10.3.1.19>		FILE: Number of bytes read=267030748
+WordCount-YARN-c19-10.3.1.19>		FILE: Number of bytes written=396675485
+WordCount-YARN-c19-10.3.1.19>		FILE: Number of read operations=0
+WordCount-YARN-c19-10.3.1.19>		FILE: Number of large read operations=0
+WordCount-YARN-c19-10.3.1.19>		FILE: Number of write operations=0
+WordCount-YARN-c19-10.3.1.19>		HDFS: Number of bytes read=2202386159
+WordCount-YARN-c19-10.3.1.19>		HDFS: Number of bytes written=79748597
+WordCount-YARN-c19-10.3.1.19>		HDFS: Number of read operations=57
+WordCount-YARN-c19-10.3.1.19>		HDFS: Number of large read operations=0
+WordCount-YARN-c19-10.3.1.19>		HDFS: Number of write operations=2
+WordCount-YARN-c19-10.3.1.19>	Job Counters 
+WordCount-YARN-c19-10.3.1.19>		Failed map tasks=2
+WordCount-YARN-c19-10.3.1.19>		Killed map tasks=2
+WordCount-YARN-c19-10.3.1.19>		Launched map tasks=22
+WordCount-YARN-c19-10.3.1.19>		Launched reduce tasks=1
+WordCount-YARN-c19-10.3.1.19>		Other local map tasks=2
+WordCount-YARN-c19-10.3.1.19>		Data-local map tasks=18
+WordCount-YARN-c19-10.3.1.19>		Rack-local map tasks=2
+WordCount-YARN-c19-10.3.1.19>		Total time spent by all maps in occupied slots (ms)=561848
+WordCount-YARN-c19-10.3.1.19>		Total time spent by all reduces in occupied slots (ms)=51528
+WordCount-YARN-c19-10.3.1.19>		Total time spent by all map tasks (ms)=561848
+WordCount-YARN-c19-10.3.1.19>		Total time spent by all reduce tasks (ms)=51528
+WordCount-YARN-c19-10.3.1.19>		Total vcore-seconds taken by all map tasks=561848
+WordCount-YARN-c19-10.3.1.19>		Total vcore-seconds taken by all reduce tasks=51528
+WordCount-YARN-c19-10.3.1.19>		Total megabyte-seconds taken by all map tasks=575332352
+WordCount-YARN-c19-10.3.1.19>		Total megabyte-seconds taken by all reduce tasks=52764672
+WordCount-YARN-c19-10.3.1.19>	Map-Reduce Framework
+WordCount-YARN-c19-10.3.1.19>		Map input records=504019
+WordCount-YARN-c19-10.3.1.19>		Map output records=202126056
+WordCount-YARN-c19-10.3.1.19>		Map output bytes=3041336435
+WordCount-YARN-c19-10.3.1.19>		Map output materialized bytes=127859905
+WordCount-YARN-c19-10.3.1.19>		Input split bytes=1926
+WordCount-YARN-c19-10.3.1.19>		Combine input records=206782534
+WordCount-YARN-c19-10.3.1.19>		Combine output records=8826930
+WordCount-YARN-c19-10.3.1.19>		Reduce input groups=2332251
+WordCount-YARN-c19-10.3.1.19>		Reduce shuffle bytes=127859905
+WordCount-YARN-c19-10.3.1.19>		Reduce input records=4170452
+WordCount-YARN-c19-10.3.1.19>		Reduce output records=2332251
+WordCount-YARN-c19-10.3.1.19>		Spilled Records=12997382
+WordCount-YARN-c19-10.3.1.19>		Shuffled Maps =18
+WordCount-YARN-c19-10.3.1.19>		Failed Shuffles=0
+WordCount-YARN-c19-10.3.1.19>		Merged Map outputs=18
+WordCount-YARN-c19-10.3.1.19>		GC time elapsed (ms)=13638
+WordCount-YARN-c19-10.3.1.19>		CPU time spent (ms)=538680
+WordCount-YARN-c19-10.3.1.19>		Physical memory (bytes) snapshot=5347082240
+WordCount-YARN-c19-10.3.1.19>		Virtual memory (bytes) snapshot=37591199744
+WordCount-YARN-c19-10.3.1.19>		Total committed heap usage (bytes)=3961520128
+WordCount-YARN-c19-10.3.1.19>	Shuffle Errors
+WordCount-YARN-c19-10.3.1.19>		BAD_ID=0
+WordCount-YARN-c19-10.3.1.19>		CONNECTION=0
+WordCount-YARN-c19-10.3.1.19>		IO_ERROR=0
+WordCount-YARN-c19-10.3.1.19>		WRONG_LENGTH=0
+WordCount-YARN-c19-10.3.1.19>		WRONG_MAP=0
+WordCount-YARN-c19-10.3.1.19>		WRONG_REDUCE=0
+WordCount-YARN-c19-10.3.1.19>	File Input Format Counters 
+WordCount-YARN-c19-10.3.1.19>		Bytes Read=2202384233
+WordCount-YARN-c19-10.3.1.19>	File Output Format Counters 
+WordCount-YARN-c19-10.3.1.19>		Bytes Written=79748597
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:26 INFO mapreduce.Job:  map 100% reduce 89%
+----------------------------------
+mIP 10.3.1.19 Global Aggregation Start Time = 1420036206141
+----------------------------------
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:52 INFO mapreduce.Job:  map 100% reduce 92%
+WordCount-YARN-c19-10.3.1.19> userName = hpds
+WordCount-YARN-c19-10.3.1.19> hadoop_home = /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+WordCount-YARN-c19-10.3.1.19> outputPath = c19_WordCount-YARN_OUT_20141231222848
+WordCount-YARN-c19-10.3.1.19> srcHDFS = hdfs://c19:39100/
+WordCount-YARN-c19-10.3.1.19>RegionCloud Distcp [/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop distcp hdfs://c19:39100/user/hpds/c19_WordCount-YARN_OUT_20141231222848 hdfs://c02:39100/user/hpds/c19_WordCount-YARN_OUT_20141231222848]
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:41 INFO Configuration.deprecation: fs.default.name is deprecated. Instead, use fs.defaultFS
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:41 INFO tools.DistCp: Input Options: DistCpOptions{atomicCommit=false, syncFolder=false, deleteMissing=false, ignoreFailures=false, maxMaps=20, sslConfigurationFile='null', copyStrategy='uniformsize', sourceFileListing=null, sourcePaths=[hdfs://c19:39100/user/hpds/c19_WordCount-YARN_OUT_20141231222848], targetPath=hdfs://c02:39100/user/hpds/c19_WordCount-YARN_OUT_20141231222848}
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:41 INFO client.RMProxy: Connecting to ResourceManager at c19/10.3.1.19:40832
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:42 INFO Configuration.deprecation: io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:42 INFO Configuration.deprecation: io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:42 INFO client.RMProxy: Connecting to ResourceManager at c19/10.3.1.19:40832
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:42 INFO mapreduce.JobSubmitter: number of splits:2
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:29 INFO mapreduce.Job:  map 100% reduce 96%
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:42 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1419923761585_0046
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:43 INFO impl.YarnClientImpl: Submitted application application_1419923761585_0046
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:43 INFO mapreduce.Job: The url to track the job: http://c19:40888/proxy/application_1419923761585_0046/
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:43 INFO tools.DistCp: DistCp job-id: job_1419923761585_0046
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:43 INFO mapreduce.Job: Running job: job_1419923761585_0046
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:55 INFO mapreduce.Job:  map 100% reduce 99%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:31 INFO mapreduce.Job:  map 100% reduce 100%
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:31 INFO mapreduce.Job: Job job_1418720423667_0179 completed successfully
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:31 INFO mapreduce.Job: Counters: 53
+WordCount-YARN-c07-10.3.1.7>	File System Counters
+WordCount-YARN-c07-10.3.1.7>		FILE: Number of bytes read=290192079
+WordCount-YARN-c07-10.3.1.7>		FILE: Number of bytes written=431401507
+WordCount-YARN-c07-10.3.1.7>		FILE: Number of read operations=0
+WordCount-YARN-c07-10.3.1.7>		FILE: Number of large read operations=0
+WordCount-YARN-c07-10.3.1.7>		FILE: Number of write operations=0
+WordCount-YARN-c07-10.3.1.7>		HDFS: Number of bytes read=2202519589
+WordCount-YARN-c07-10.3.1.7>		HDFS: Number of bytes written=89180117
+WordCount-YARN-c07-10.3.1.7>		HDFS: Number of read operations=57
+WordCount-YARN-c07-10.3.1.7>		HDFS: Number of large read operations=0
+WordCount-YARN-c07-10.3.1.7>		HDFS: Number of write operations=2
+WordCount-YARN-c07-10.3.1.7>	Job Counters 
+WordCount-YARN-c07-10.3.1.7>		Failed map tasks=2
+WordCount-YARN-c07-10.3.1.7>		Killed map tasks=2
+WordCount-YARN-c07-10.3.1.7>		Launched map tasks=22
+WordCount-YARN-c07-10.3.1.7>		Launched reduce tasks=1
+WordCount-YARN-c07-10.3.1.7>		Other local map tasks=2
+WordCount-YARN-c07-10.3.1.7>		Data-local map tasks=16
+WordCount-YARN-c07-10.3.1.7>		Rack-local map tasks=4
+WordCount-YARN-c07-10.3.1.7>		Total time spent by all maps in occupied slots (ms)=528312
+WordCount-YARN-c07-10.3.1.7>		Total time spent by all reduces in occupied slots (ms)=58225
+WordCount-YARN-c07-10.3.1.7>		Total time spent by all map tasks (ms)=528312
+WordCount-YARN-c07-10.3.1.7>		Total time spent by all reduce tasks (ms)=58225
+WordCount-YARN-c07-10.3.1.7>		Total vcore-seconds taken by all map tasks=528312
+WordCount-YARN-c07-10.3.1.7>		Total vcore-seconds taken by all reduce tasks=58225
+WordCount-YARN-c07-10.3.1.7>		Total megabyte-seconds taken by all map tasks=540991488
+WordCount-YARN-c07-10.3.1.7>		Total megabyte-seconds taken by all reduce tasks=59622400
+WordCount-YARN-c07-10.3.1.7>	Map-Reduce Framework
+WordCount-YARN-c07-10.3.1.7>		Map input records=50139
+WordCount-YARN-c07-10.3.1.7>		Map output records=201678496
+WordCount-YARN-c07-10.3.1.7>		Map output bytes=3040007464
+WordCount-YARN-c07-10.3.1.7>		Map output materialized bytes=139424634
+WordCount-YARN-c07-10.3.1.7>		Input split bytes=1926
+WordCount-YARN-c07-10.3.1.7>		Combine input records=206333335
+WordCount-YARN-c07-10.3.1.7>		Combine output records=8825087
+WordCount-YARN-c07-10.3.1.7>		Reduce input groups=2331053
+WordCount-YARN-c07-10.3.1.7>		Reduce shuffle bytes=139424634
+WordCount-YARN-c07-10.3.1.7>		Reduce input records=4170248
+WordCount-YARN-c07-10.3.1.7>		Reduce output records=2331053
+WordCount-YARN-c07-10.3.1.7>		Spilled Records=12995335
+WordCount-YARN-c07-10.3.1.7>		Shuffled Maps =18
+WordCount-YARN-c07-10.3.1.7>		Failed Shuffles=0
+WordCount-YARN-c07-10.3.1.7>		Merged Map outputs=18
+WordCount-YARN-c07-10.3.1.7>		GC time elapsed (ms)=11766
+WordCount-YARN-c07-10.3.1.7>		CPU time spent (ms)=531590
+WordCount-YARN-c07-10.3.1.7>		Physical memory (bytes) snapshot=5370601472
+WordCount-YARN-c07-10.3.1.7>		Virtual memory (bytes) snapshot=37563572224
+WordCount-YARN-c07-10.3.1.7>		Total committed heap usage (bytes)=3958898688
+WordCount-YARN-c07-10.3.1.7>	Shuffle Errors
+WordCount-YARN-c07-10.3.1.7>		BAD_ID=0
+WordCount-YARN-c07-10.3.1.7>		CONNECTION=0
+WordCount-YARN-c07-10.3.1.7>		IO_ERROR=0
+WordCount-YARN-c07-10.3.1.7>		WRONG_LENGTH=0
+WordCount-YARN-c07-10.3.1.7>		WRONG_MAP=0
+WordCount-YARN-c07-10.3.1.7>		WRONG_REDUCE=0
+WordCount-YARN-c07-10.3.1.7>	File Input Format Counters 
+WordCount-YARN-c07-10.3.1.7>		Bytes Read=2202517663
+WordCount-YARN-c07-10.3.1.7>	File Output Format Counters 
+WordCount-YARN-c07-10.3.1.7>		Bytes Written=89180117
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:56 INFO mapreduce.Job:  map 100% reduce 100%
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:56 INFO mapreduce.Job: Job job_1419945164001_0035 completed successfully
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:56 INFO mapreduce.Job: Counters: 53
+WordCount-YARN-c13-10.3.1.13>	File System Counters
+WordCount-YARN-c13-10.3.1.13>		FILE: Number of bytes read=269650406
+WordCount-YARN-c13-10.3.1.13>		FILE: Number of bytes written=400623452
+WordCount-YARN-c13-10.3.1.13>		FILE: Number of read operations=0
+WordCount-YARN-c13-10.3.1.13>		FILE: Number of large read operations=0
+WordCount-YARN-c13-10.3.1.13>		FILE: Number of write operations=0
+WordCount-YARN-c13-10.3.1.13>		HDFS: Number of bytes read=2202822708
+WordCount-YARN-c13-10.3.1.13>		HDFS: Number of bytes written=80807442
+WordCount-YARN-c13-10.3.1.13>		HDFS: Number of read operations=57
+WordCount-YARN-c13-10.3.1.13>		HDFS: Number of large read operations=0
+WordCount-YARN-c13-10.3.1.13>		HDFS: Number of write operations=2
+WordCount-YARN-c13-10.3.1.13>	Job Counters 
+WordCount-YARN-c13-10.3.1.13>		Failed map tasks=1
+WordCount-YARN-c13-10.3.1.13>		Killed map tasks=2
+WordCount-YARN-c13-10.3.1.13>		Launched map tasks=21
+WordCount-YARN-c13-10.3.1.13>		Launched reduce tasks=1
+WordCount-YARN-c13-10.3.1.13>		Other local map tasks=1
+WordCount-YARN-c13-10.3.1.13>		Data-local map tasks=12
+WordCount-YARN-c13-10.3.1.13>		Rack-local map tasks=8
+WordCount-YARN-c13-10.3.1.13>		Total time spent by all maps in occupied slots (ms)=642987
+WordCount-YARN-c13-10.3.1.13>		Total time spent by all reduces in occupied slots (ms)=59856
+WordCount-YARN-c13-10.3.1.13>		Total time spent by all map tasks (ms)=642987
+WordCount-YARN-c13-10.3.1.13>		Total time spent by all reduce tasks (ms)=59856
+WordCount-YARN-c13-10.3.1.13>		Total vcore-seconds taken by all map tasks=642987
+WordCount-YARN-c13-10.3.1.13>		Total vcore-seconds taken by all reduce tasks=59856
+WordCount-YARN-c13-10.3.1.13>		Total megabyte-seconds taken by all map tasks=658418688
+WordCount-YARN-c13-10.3.1.13>		Total megabyte-seconds taken by all reduce tasks=61292544
+WordCount-YARN-c13-10.3.1.13>	Map-Reduce Framework
+WordCount-YARN-c13-10.3.1.13>		Map input records=49975
+WordCount-YARN-c13-10.3.1.13>		Map output records=202124201
+WordCount-YARN-c13-10.3.1.13>		Map output bytes=3041330048
+WordCount-YARN-c13-10.3.1.13>		Map output materialized bytes=129184699
+WordCount-YARN-c13-10.3.1.13>		Input split bytes=1926
+WordCount-YARN-c13-10.3.1.13>		Combine input records=206781310
+WordCount-YARN-c13-10.3.1.13>		Combine output records=8829212
+WordCount-YARN-c13-10.3.1.13>		Reduce input groups=2331838
+WordCount-YARN-c13-10.3.1.13>		Reduce shuffle bytes=129184699
+WordCount-YARN-c13-10.3.1.13>		Reduce input records=4172103
+WordCount-YARN-c13-10.3.1.13>		Reduce output records=2331838
+WordCount-YARN-c13-10.3.1.13>		Spilled Records=13001315
+WordCount-YARN-c13-10.3.1.13>		Shuffled Maps =18
+WordCount-YARN-c13-10.3.1.13>		Failed Shuffles=0
+WordCount-YARN-c13-10.3.1.13>		Merged Map outputs=18
+WordCount-YARN-c13-10.3.1.13>		GC time elapsed (ms)=14535
+WordCount-YARN-c13-10.3.1.13>		CPU time spent (ms)=587330
+WordCount-YARN-c13-10.3.1.13>		Physical memory (bytes) snapshot=5369753600
+WordCount-YARN-c13-10.3.1.13>		Virtual memory (bytes) snapshot=37581422592
+WordCount-YARN-c13-10.3.1.13>		Total committed heap usage (bytes)=3960995840
+WordCount-YARN-c13-10.3.1.13>	Shuffle Errors
+WordCount-YARN-c13-10.3.1.13>		BAD_ID=0
+WordCount-YARN-c13-10.3.1.13>		CONNECTION=0
+WordCount-YARN-c13-10.3.1.13>		IO_ERROR=0
+WordCount-YARN-c13-10.3.1.13>		WRONG_LENGTH=0
+WordCount-YARN-c13-10.3.1.13>		WRONG_MAP=0
+WordCount-YARN-c13-10.3.1.13>		WRONG_REDUCE=0
+WordCount-YARN-c13-10.3.1.13>	File Input Format Counters 
+WordCount-YARN-c13-10.3.1.13>		Bytes Read=2202820782
+WordCount-YARN-c13-10.3.1.13>	File Output Format Counters 
+WordCount-YARN-c13-10.3.1.13>		Bytes Written=80807442
+----------------------------------
+mIP 10.3.1.7 Global Aggregation Start Time = 1420036211627
+----------------------------------
+----------------------------------
+mIP 10.3.1.13 Global Aggregation Start Time = 1420036211641
+----------------------------------
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:33 INFO Configuration.deprecation: fs.default.name is deprecated. Instead, use fs.defaultFS
+WordCount-YARN-c07-10.3.1.7> userName = hpds
+WordCount-YARN-c07-10.3.1.7> hadoop_home = /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+WordCount-YARN-c07-10.3.1.7> outputPath = c07_WordCount-YARN_OUT_20141231222848
+WordCount-YARN-c07-10.3.1.7> srcHDFS = hdfs://c07:39100/
+WordCount-YARN-c07-10.3.1.7>RegionCloud Distcp [/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop distcp hdfs://c07:39100/user/hpds/c07_WordCount-YARN_OUT_20141231222848 hdfs://c02:39100/user/hpds/c07_WordCount-YARN_OUT_20141231222848]
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:28:58 INFO Configuration.deprecation: fs.default.name is deprecated. Instead, use fs.defaultFS
+WordCount-YARN-c13-10.3.1.13> userName = hpds
+WordCount-YARN-c13-10.3.1.13> hadoop_home = /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+WordCount-YARN-c13-10.3.1.13> outputPath = c13_WordCount-YARN_OUT_20141231222848
+WordCount-YARN-c13-10.3.1.13> srcHDFS = hdfs://c13:39100/
+WordCount-YARN-c13-10.3.1.13>RegionCloud Distcp [/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop distcp hdfs://c13:39100/user/hpds/c13_WordCount-YARN_OUT_20141231222848 hdfs://c02:39100/user/hpds/c13_WordCount-YARN_OUT_20141231222848]
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:58 INFO tools.DistCp: Input Options: DistCpOptions{atomicCommit=false, syncFolder=false, deleteMissing=false, ignoreFailures=false, maxMaps=20, sslConfigurationFile='null', copyStrategy='uniformsize', sourceFileListing=null, sourcePaths=[hdfs://c13:39100/user/hpds/c13_WordCount-YARN_OUT_20141231222848], targetPath=hdfs://c02:39100/user/hpds/c13_WordCount-YARN_OUT_20141231222848}
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:33 INFO tools.DistCp: Input Options: DistCpOptions{atomicCommit=false, syncFolder=false, deleteMissing=false, ignoreFailures=false, maxMaps=20, sslConfigurationFile='null', copyStrategy='uniformsize', sourceFileListing=null, sourcePaths=[hdfs://c07:39100/user/hpds/c07_WordCount-YARN_OUT_20141231222848], targetPath=hdfs://c02:39100/user/hpds/c07_WordCount-YARN_OUT_20141231222848}
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:47 INFO mapreduce.Job: Job job_1419923761585_0046 running in uber mode : false
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:47 INFO mapreduce.Job:  map 0% reduce 0%
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:58 INFO client.RMProxy: Connecting to ResourceManager at c13/10.3.1.13:40832
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:33 INFO client.RMProxy: Connecting to ResourceManager at c07/10.3.1.7:40832
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO Configuration.deprecation: io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO Configuration.deprecation: io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO Configuration.deprecation: io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO Configuration.deprecation: io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO client.RMProxy: Connecting to ResourceManager at c07/10.3.1.7:40832
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO client.RMProxy: Connecting to ResourceManager at c13/10.3.1.13:40832
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO mapreduce.JobSubmitter: number of splits:2
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO mapreduce.JobSubmitter: number of splits:2
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1418720423667_0180
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1419945164001_0036
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO impl.YarnClientImpl: Submitted application application_1418720423667_0180
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO mapreduce.Job: The url to track the job: http://c07:40888/proxy/application_1418720423667_0180/
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO tools.DistCp: DistCp job-id: job_1418720423667_0180
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:34 INFO mapreduce.Job: Running job: job_1418720423667_0180
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO impl.YarnClientImpl: Submitted application application_1419945164001_0036
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO mapreduce.Job: The url to track the job: http://c13:40888/proxy/application_1419945164001_0036/
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO tools.DistCp: DistCp job-id: job_1419945164001_0036
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:28:59 INFO mapreduce.Job: Running job: job_1419945164001_0036
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:51 INFO mapreduce.Job:  map 100% reduce 0%
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:51 INFO mapreduce.Job: Job job_1419923761585_0046 completed successfully
+WordCount-YARN-c19-10.3.1.19>Distcp_>14/12/31 22:29:51 INFO mapreduce.Job: Counters: 33
+WordCount-YARN-c19-10.3.1.19>Distcp_>	File System Counters
+WordCount-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of bytes read=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of bytes written=190236
+WordCount-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of read operations=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of large read operations=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of write operations=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of bytes read=79749563
+WordCount-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of bytes written=79748597
+WordCount-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of read operations=35
+WordCount-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of large read operations=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of write operations=8
+WordCount-YARN-c19-10.3.1.19>Distcp_>	Job Counters 
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Launched map tasks=2
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Other local map tasks=2
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Total time spent by all maps in occupied slots (ms)=4480
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Total time spent by all reduces in occupied slots (ms)=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Total time spent by all map tasks (ms)=4480
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Total vcore-seconds taken by all map tasks=4480
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Total megabyte-seconds taken by all map tasks=4587520
+WordCount-YARN-c19-10.3.1.19>Distcp_>	Map-Reduce Framework
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Map input records=2
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Map output records=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Input split bytes=268
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Spilled Records=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Failed Shuffles=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Merged Map outputs=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>		GC time elapsed (ms)=79
+WordCount-YARN-c19-10.3.1.19>Distcp_>		CPU time spent (ms)=2820
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Physical memory (bytes) snapshot=363597824
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Virtual memory (bytes) snapshot=3960950784
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Total committed heap usage (bytes)=286261248
+WordCount-YARN-c19-10.3.1.19>Distcp_>	File Input Format Counters 
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Bytes Read=698
+WordCount-YARN-c19-10.3.1.19>Distcp_>	File Output Format Counters 
+WordCount-YARN-c19-10.3.1.19>Distcp_>		Bytes Written=0
+WordCount-YARN-c19-10.3.1.19>Distcp_>	org.apache.hadoop.tools.mapred.CopyMapper$Counter
+WordCount-YARN-c19-10.3.1.19>Distcp_>		BYTESCOPIED=79748597
+WordCount-YARN-c19-10.3.1.19>Distcp_>		BYTESEXPECTED=79748597
+WordCount-YARN-c19-10.3.1.19>Distcp_>		COPY=2
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:37 INFO mapreduce.Job: Job job_1418720423667_0180 running in uber mode : false
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:37 INFO mapreduce.Job:  map 0% reduce 0%
+WordCount-YARN-c19-10.3.1.19>Server To Join
+WordCount-YARN-c19-10.3.1.19>send REQ_MIGRATE_DATA_FINISHED
+Top Cloud Recv MIGRATE Data Finished
+WordCount-YARN-c19-10.3.1.19>Stop Server
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:29:03 INFO mapreduce.Job: Job job_1419945164001_0036 running in uber mode : false
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:29:03 INFO mapreduce.Job:  map 0% reduce 0%
+WordCount-YARN-c19-10.3.1.19>java.net.SocketTimeoutException: Read timed out
+WordCount-YARN-c19-10.3.1.19>	at java.net.SocketInputStream.socketRead0(Native Method)
+WordCount-YARN-c19-10.3.1.19>	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+WordCount-YARN-c19-10.3.1.19>	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+WordCount-YARN-c19-10.3.1.19>	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+WordCount-YARN-c19-10.3.1.19>	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+WordCount-YARN-c19-10.3.1.19>	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+WordCount-YARN-c19-10.3.1.19>	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+WordCount-YARN-c19-10.3.1.19>	at java.io.BufferedReader.fill(BufferedReader.java:161)
+WordCount-YARN-c19-10.3.1.19>	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+WordCount-YARN-c19-10.3.1.19>	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+WordCount-YARN-c19-10.3.1.19>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:79)
+----------------------------------
+mIP 10.3.1.19 Global Aggreagtion End Time = 1420036219150
+----------------------------------
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:42 INFO mapreduce.Job:  map 100% reduce 0%
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:29:06 INFO mapreduce.Job:  map 50% reduce 0%
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:43 INFO mapreduce.Job: Job job_1418720423667_0180 completed successfully
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:29:08 INFO mapreduce.Job:  map 100% reduce 0%
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:29:08 INFO mapreduce.Job: Job job_1419945164001_0036 completed successfully
+WordCount-YARN-c07-10.3.1.7>Distcp_>14/12/31 22:29:43 INFO mapreduce.Job: Counters: 33
+WordCount-YARN-c07-10.3.1.7>Distcp_>	File System Counters
+WordCount-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of bytes read=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of bytes written=190238
+WordCount-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of read operations=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of large read operations=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of write operations=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of bytes read=89181085
+WordCount-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of bytes written=89180117
+WordCount-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of read operations=35
+WordCount-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of large read operations=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of write operations=8
+WordCount-YARN-c07-10.3.1.7>Distcp_>	Job Counters 
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Launched map tasks=2
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Other local map tasks=2
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Total time spent by all maps in occupied slots (ms)=3639
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Total time spent by all reduces in occupied slots (ms)=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Total time spent by all map tasks (ms)=3639
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Total vcore-seconds taken by all map tasks=3639
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Total megabyte-seconds taken by all map tasks=3726336
+WordCount-YARN-c07-10.3.1.7>Distcp_>	Map-Reduce Framework
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Map input records=2
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Map output records=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Input split bytes=270
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Spilled Records=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Failed Shuffles=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Merged Map outputs=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>		GC time elapsed (ms)=94
+WordCount-YARN-c07-10.3.1.7>Distcp_>		CPU time spent (ms)=2800
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Physical memory (bytes) snapshot=358559744
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Virtual memory (bytes) snapshot=3951943680
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Total committed heap usage (bytes)=284688384
+WordCount-YARN-c07-10.3.1.7>Distcp_>	File Input Format Counters 
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Bytes Read=698
+WordCount-YARN-c07-10.3.1.7>Distcp_>	File Output Format Counters 
+WordCount-YARN-c07-10.3.1.7>Distcp_>		Bytes Written=0
+WordCount-YARN-c07-10.3.1.7>Distcp_>	org.apache.hadoop.tools.mapred.CopyMapper$Counter
+WordCount-YARN-c07-10.3.1.7>Distcp_>		BYTESCOPIED=89180117
+WordCount-YARN-c07-10.3.1.7>Distcp_>		BYTESEXPECTED=89180117
+WordCount-YARN-c07-10.3.1.7>Distcp_>		COPY=2
+WordCount-YARN-c13-10.3.1.13>Distcp_>14/12/31 22:29:08 INFO mapreduce.Job: Counters: 33
+WordCount-YARN-c13-10.3.1.13>Distcp_>	File System Counters
+WordCount-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of bytes read=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of bytes written=190592
+WordCount-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of read operations=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of large read operations=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of write operations=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of bytes read=80808406
+WordCount-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of bytes written=80807442
+WordCount-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of read operations=35
+WordCount-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of large read operations=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of write operations=8
+WordCount-YARN-c13-10.3.1.13>Distcp_>	Job Counters 
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Launched map tasks=2
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Other local map tasks=2
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Total time spent by all maps in occupied slots (ms)=3617
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Total time spent by all reduces in occupied slots (ms)=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Total time spent by all map tasks (ms)=3617
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Total vcore-seconds taken by all map tasks=3617
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Total megabyte-seconds taken by all map tasks=3703808
+WordCount-YARN-c13-10.3.1.13>Distcp_>	Map-Reduce Framework
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Map input records=2
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Map output records=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Input split bytes=266
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Spilled Records=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Failed Shuffles=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Merged Map outputs=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>		GC time elapsed (ms)=73
+WordCount-YARN-c13-10.3.1.13>Distcp_>		CPU time spent (ms)=2330
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Physical memory (bytes) snapshot=342216704
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Virtual memory (bytes) snapshot=3954876416
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Total committed heap usage (bytes)=288882688
+WordCount-YARN-c13-10.3.1.13>Distcp_>	File Input Format Counters 
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Bytes Read=698
+WordCount-YARN-c13-10.3.1.13>Distcp_>	File Output Format Counters 
+WordCount-YARN-c13-10.3.1.13>Distcp_>		Bytes Written=0
+WordCount-YARN-c13-10.3.1.13>Distcp_>	org.apache.hadoop.tools.mapred.CopyMapper$Counter
+WordCount-YARN-c13-10.3.1.13>Distcp_>		BYTESCOPIED=80807442
+WordCount-YARN-c13-10.3.1.13>Distcp_>		BYTESEXPECTED=80807442
+WordCount-YARN-c13-10.3.1.13>Distcp_>		COPY=2
+WordCount-YARN-c07-10.3.1.7>Server To Join
+WordCount-YARN-c07-10.3.1.7>send REQ_MIGRATE_DATA_FINISHED
+WordCount-YARN-c13-10.3.1.13>Server To Join
+WordCount-YARN-c13-10.3.1.13>send REQ_MIGRATE_DATA_FINISHED
+Top Cloud Recv MIGRATE Data Finished
+Top Cloud Recv MIGRATE Data Finished
+WordCount-YARN-c07-10.3.1.7>Stop Server
+WordCount-YARN-c13-10.3.1.13>Stop Server
+WordCount-YARN-c19-10.3.1.19>java.net.SocketTimeoutException: Accept timed out
+WordCount-YARN-c19-10.3.1.19>	at java.net.PlainSocketImpl.socketAccept(Native Method)
+WordCount-YARN-c19-10.3.1.19>	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+WordCount-YARN-c19-10.3.1.19>	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+WordCount-YARN-c19-10.3.1.19>	at java.net.ServerSocket.accept(ServerSocket.java:513)
+WordCount-YARN-c19-10.3.1.19>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:66)
+WordCount-YARN-c19-10.3.1.19>Region Cloud Server Closed
+WordCount-YARN-c19-10.3.1.19>Region Cloud Report : RegionCloudsTime = 71478(ms)
+WordCount-YARN-c19-10.3.1.19>Region Cloud Report : GlobalAggregationTime = 18253(ms)
+WordCount-YARN-c07-10.3.1.7>java.net.SocketTimeoutException: Read timed out
+WordCount-YARN-c07-10.3.1.7>	at java.net.SocketInputStream.socketRead0(Native Method)
+WordCount-YARN-c07-10.3.1.7>	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+WordCount-YARN-c07-10.3.1.7>	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+WordCount-YARN-c07-10.3.1.7>	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+WordCount-YARN-c07-10.3.1.7>	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+WordCount-YARN-c07-10.3.1.7>	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+WordCount-YARN-c07-10.3.1.7>	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+WordCount-YARN-c07-10.3.1.7>	at java.io.BufferedReader.fill(BufferedReader.java:161)
+WordCount-YARN-c07-10.3.1.7>	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+WordCount-YARN-c07-10.3.1.7>	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+WordCount-YARN-c07-10.3.1.7>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:79)
+WordCount-YARN-c13-10.3.1.13>java.net.SocketTimeoutException: Read timed out
+WordCount-YARN-c13-10.3.1.13>	at java.net.SocketInputStream.socketRead0(Native Method)
+WordCount-YARN-c13-10.3.1.13>	at java.net.SocketInputStream.read(SocketInputStream.java:150)
+WordCount-YARN-c13-10.3.1.13>	at java.net.SocketInputStream.read(SocketInputStream.java:121)
+WordCount-YARN-c13-10.3.1.13>	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+WordCount-YARN-c13-10.3.1.13>	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+WordCount-YARN-c13-10.3.1.13>	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+WordCount-YARN-c13-10.3.1.13>	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+WordCount-YARN-c13-10.3.1.13>	at java.io.BufferedReader.fill(BufferedReader.java:161)
+WordCount-YARN-c13-10.3.1.13>	at java.io.BufferedReader.readLine(BufferedReader.java:324)
+WordCount-YARN-c13-10.3.1.13>	at java.io.BufferedReader.readLine(BufferedReader.java:389)
+WordCount-YARN-c13-10.3.1.13>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:79)
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:58 INFO ipc.Client: Retrying connect to server: c21/10.3.1.21:55380. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+----------------------------------
+mIP 10.3.1.7 Global Aggreagtion End Time = 1420036224637
+----------------------------------
+----------------------------------
+mIP 10.3.1.13 Global Aggreagtion End Time = 1420036224652
+----------------------------------
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:29:59 INFO ipc.Client: Retrying connect to server: c21/10.3.1.21:55380. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:30:00 INFO ipc.Client: Retrying connect to server: c21/10.3.1.21:55380. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c19-10.3.1.19>14/12/31 22:30:00 INFO mapred.ClientServiceDelegate: Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+WordCount-YARN-c07-10.3.1.7>java.net.SocketTimeoutException: Accept timed out
+WordCount-YARN-c07-10.3.1.7>	at java.net.PlainSocketImpl.socketAccept(Native Method)
+WordCount-YARN-c07-10.3.1.7>	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+WordCount-YARN-c07-10.3.1.7>	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+WordCount-YARN-c07-10.3.1.7>	at java.net.ServerSocket.accept(ServerSocket.java:513)
+WordCount-YARN-c07-10.3.1.7>Region Cloud Server Closed
+WordCount-YARN-c07-10.3.1.7>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:66)
+WordCount-YARN-c07-10.3.1.7>Region Cloud Report : RegionCloudsTime = 74404(ms)
+WordCount-YARN-c07-10.3.1.7>Region Cloud Report : GlobalAggregationTime = 18361(ms)
+WordCount-YARN-c13-10.3.1.13>java.net.SocketTimeoutException: Accept timed out
+WordCount-YARN-c13-10.3.1.13>	at java.net.PlainSocketImpl.socketAccept(Native Method)
+WordCount-YARN-c13-10.3.1.13>Region Cloud Server Closed
+WordCount-YARN-c13-10.3.1.13>	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+WordCount-YARN-c13-10.3.1.13>	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+WordCount-YARN-c13-10.3.1.13>	at java.net.ServerSocket.accept(ServerSocket.java:513)
+WordCount-YARN-c13-10.3.1.13>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:66)
+WordCount-YARN-c13-10.3.1.13>Region Cloud Report : RegionCloudsTime = 74650(ms)
+WordCount-YARN-c13-10.3.1.13>Region Cloud Report : GlobalAggregationTime = 18140(ms)
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:50 INFO ipc.Client: Retrying connect to server: c08/10.3.1.8:58486. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:29:15 INFO ipc.Client: Retrying connect to server: c26/10.3.1.26:41883. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:51 INFO ipc.Client: Retrying connect to server: c08/10.3.1.8:58486. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:29:16 INFO ipc.Client: Retrying connect to server: c26/10.3.1.26:41883. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:52 INFO ipc.Client: Retrying connect to server: c08/10.3.1.8:58486. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:29:17 INFO ipc.Client: Retrying connect to server: c26/10.3.1.26:41883. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+WordCount-YARN-c07-10.3.1.7>14/12/31 22:29:52 INFO mapred.ClientServiceDelegate: Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+WordCount-YARN-c13-10.3.1.13>14/12/31 22:29:17 INFO mapred.ClientServiceDelegate: Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+FedRegionCloudJob All Joined
+TopCloud Report : RegionCloud End Time = 100122(ms)
+TopCloud Report : RegionCloud Total Time = 100122(ms)
+----------------------------------
+Map-ProxyReduce Phrase Finished
+----------------------------------
+
+----------------------------------
+Global Aggregation Start ...
+----------------------------------
+Wait For FedCouldMonitorClient Join
+FedCouldMonitorClient All Joined
+Top Cloud Report : Global Aggregation Consuming Time :
+mIP 10.3.1.7 Intermediate data Aggregation Time = 13010(ms)
+mIP 10.3.1.13 Intermediate data Aggregation Time = 13011(ms)
+mIP 10.3.1.19 Intermediate data Aggregation Time = 13009(ms)
+----------------------------------
+Global Aggregation End ...
+----------------------------------
+Select ProxyMapper : ncku.hpds.fed.MRv2.ProxySelector.ProxyMapperTextInt
+----------------------------------
+TopCloud Start Time = 1420036232173
+----------------------------------
+----------------------------------
+TopCloudEnd() = 1420036297643
+----------------------------------
+Top Cloud Report : RegionCloud Work Time = 100122(ms)
+Top Cloud Report : Top Cloud Work Time = 65470(ms)
+Top Cloud Report : Global Aggregation Time Details : 
+mIP 10.3.1.7 Intermediate data Aggregation Time = 13010(ms)
+mIP 10.3.1.13 Intermediate data Aggregation Time = 13011(ms)
+mIP 10.3.1.19 Intermediate data Aggregation Time = 13009(ms)
+Top Cloud Report : Total Global Aggregation Time = 39030(ms)
+actual Aggregation Time = 18511(ms)
+total time = 184103.0 (ms), 184.103(s)
