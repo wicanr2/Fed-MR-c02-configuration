@@ -1,0 +1,51 @@
+<FedHadoop>
+	<TopCloud>
+		<CloudAddress>10.2.0.9</CloudAddress>
+        	<JobName>WordCount-YARN</JobName>
+		<JarPath>/home/hpds/wjy/FedMR-hadoop-2.4.1/hadoop-2.4.1/fed_task/wc_old_api.jar</JarPath>
+	</TopCloud>
+    	<!-- Region Cloud Configuration -->
+	<RegionCloud>
+		<Name>b09</Name>
+		<CloudAddress>10.2.0.9</CloudAddress>
+		<HadoopHome>/home/hpds/wjy/FedMR-hadoop-2.4.1/hadoop-2.4.1</HadoopHome>
+        	<JobName>WordCount-YARN</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg0>test1.txt</Arg0>
+		<Arg1>dummy</Arg1>
+	</RegionCloud>
+	<RegionCloud>
+		<Name>b11</Name>
+		<CloudAddress>10.2.0.11</CloudAddress>
+		<HadoopHome>/home/hpds/wjy/FedMR-hadoop-2.4.1/hadoop-2.4.1</HadoopHome>
+        	<JobName>WordCount-YARN</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg0>test1.txt</Arg0>
+		<Arg1>dummy</Arg1>
+	</RegionCloud>
+	<RegionCloud>
+		<Name>b12</Name>
+		<CloudAddress>10.2.0.12</CloudAddress>
+		<HadoopHome>/home/hpds/wjy/FedMR-hadoop-2.4.1/hadoop-2.4.1</HadoopHome>
+        	<JobName>WordCount-YARN</JobName>
+		<MainClass></MainClass>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg0>test1.txt</Arg0>
+		<Arg1>dummy</Arg1>
+	</RegionCloud>
+<!--
+	<RegionCloud>
+		<Name>b08</Name>
+		<CloudAddress>10.2.0.8</CloudAddress>
+		<HadoopHome>/home/hpds/wjy/wjy_fedloop</HadoopHome>
+        	<JobName>WordCount</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg0>test1.txt</Arg0>
+		<Arg1>dummy</Arg1>
+	</RegionCloud>
+-->
+</FedHadoop>

@@ -1,0 +1,38 @@
+<FedHadoop>
+	<TopCloud>
+		<CloudAddress>10.3.1.1</CloudAddress>
+        	<JobName>WordCount</JobName>
+		<JarPath>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/w.jar</JarPathi>
+	</TopCloud>
+    	<!-- Region Cloud Configuration -->
+	<RegionCloud>
+		<Name>c02</Name>
+		<CloudAddress>10.3.1.2</CloudAddress>
+		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
+        	<JobName>WordCount</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg1>test1.txt</Arg1>
+		<Arg2>dummy</Arg2>
+	</RegionCloud>
+	<RegionCloud>
+		<Name>c03</Name>
+		<CloudAddress>10.3.1.3</CloudAddress>
+		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
+        	<JobName>WordCount</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg1>test1.txt</Arg1>
+		<Arg2>dummy</Arg2>
+	</RegionCloud>
+	<RegionCloud>
+		<Name>c04</Name>
+		<CloudAddress>10.3.1.4</CloudAddress>
+		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
+        	<JobName>WordCount</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount2</OtherArgs>
+		<Arg1>test1.txt</Arg1>
+		<Arg2>dummy</Arg2>
+	</RegionCloud>
+</FedHadoop>

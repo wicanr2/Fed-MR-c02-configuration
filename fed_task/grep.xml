@@ -1,0 +1,53 @@
+<FedHadoop>
+	<TopCloud>
+		<CloudAddress>10.3.1.2</CloudAddress>
+        	<JobName>Grep-YARN</JobName>
+		<JarPath>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/hadoop-mapreduce-examples-2.4.1.jar</JarPath>
+	</TopCloud>
+    	<!-- Region Cloud Configuration -->
+ 
+	<RegionCloud>
+		<Name>c07</Name>
+		<CloudAddress>10.3.1.7</CloudAddress>
+		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
+        	<JobName>Grep-YARN</JobName>
+		<MainClass>grep</MainClass>
+		<OtherArgs>6G</OtherArgs>
+		<Arg0>grepOut</Arg0>
+		<Arg1>unpredict</Arg1>
+	</RegionCloud>
+
+<!--
+	<RegionCloud>
+		<Name>c13</Name>
+		<CloudAddress>10.3.1.13</CloudAddress>
+		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
+        	<JobName>Grep-YARN</JobName>
+		<MainClass>grep</MainClass>
+		<OtherArgs>6G</OtherArgs>
+		<Arg0>grepOut</Arg0>
+		<Arg1>unpredict</Arg1>
+	</RegionCloud>
+
+	<RegionCloud>
+		<Name>c19</Name>
+		<CloudAddress>10.3.1.19</CloudAddress>
+		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
+        	<JobName>Grep-YARN</JobName>
+		<MainClass>grep</MainClass>
+		<OtherArgs>6G</OtherArgs>
+		<Arg0>grepOut</Arg0>
+		<Arg1>unpredict</Arg1>
+	</RegionCloud>
+	<RegionCloud>
+		<Name>b08</Name>
+		<CloudAddress>10.2.0.8</CloudAddress>
+		<HadoopHome>/home/hpds/wjy/wjy_fedloop</HadoopHome>
+        	<JobName>WordCount</JobName>
+		<MainClass></MainClass>
+		<OtherArgs>wordcount1</OtherArgs>
+		<Arg0>test1.txt</Arg0>
+		<Arg1>dummy</Arg1>
+	</RegionCloud>
+-->
+</FedHadoop>
