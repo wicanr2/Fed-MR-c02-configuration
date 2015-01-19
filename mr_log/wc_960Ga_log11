@@ -1,0 +1,1401 @@
+Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/
+###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+fed = true
+mFedFlag = true
+Tag : RegionCloudListenPort use default value : 55679
+regJarFileName = hadoop-mapreduce-examples-2.4.1.jar
+Tag : HDFSInputPath use default value : none
+Tag : HDFSOutputPath use default value : c07_wc-YARN_OUT_20150119143706
+Tag : Arg2 use default value : none
+Tag : Arg3 use default value : none
+Tag : Arg4 use default value : none
+Tag : Arg5 use default value : none
+Tag : Arg6 use default value : none
+Tag : Arg7 use default value : none
+Tag : Arg8 use default value : none
+Tag : Arg9 use default value : none
+Tag : HDFSInputPath use default value : none
+Tag : HDFSOutputPath use default value : c13_wc-YARN_OUT_20150119143706
+Tag : Arg2 use default value : none
+Tag : Arg3 use default value : none
+Tag : Arg4 use default value : none
+Tag : Arg5 use default value : none
+Tag : Arg6 use default value : none
+Tag : Arg7 use default value : none
+Tag : Arg8 use default value : none
+Tag : Arg9 use default value : none
+Tag : HDFSInputPath use default value : none
+Tag : HDFSOutputPath use default value : c19_wc-YARN_OUT_20150119143706
+Tag : Arg2 use default value : none
+Tag : Arg3 use default value : none
+Tag : Arg4 use default value : none
+Tag : Arg5 use default value : none
+Tag : Arg6 use default value : none
+Tag : Arg7 use default value : none
+Tag : Arg8 use default value : none
+Tag : Arg9 use default value : none
+make FedRegionCloudJobs
+init FedRegionCloudJob
+init FedRegionCloudJob
+init FedRegionCloudJob
+add path [c07_wc-YARN_OUT_20150119143706/] in InputPaths
+add path [c13_wc-YARN_OUT_20150119143706/] in InputPaths
+add path [c19_wc-YARN_OUT_20150119143706/] in InputPaths
+FedRegionCloudJobs size : 3
+make FedCloudMonitorClients
+init JarCopyJob 
+init JarCopyJob 
+init JarCopyJob 
+Run AS Top Cloud
+Start Jar copy jobs
+run JarCopyJob 
+run JarCopyJob 
+make region cloud command
+Wait For Jar copy finishing
+run JarCopyJob 
+make region cloud command
+make region cloud command
+JarCopyJob cmd scp /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/hadoop-mapreduce-examples-2.4.1.jar 10.3.1.19:/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/
+JarCopyJob cmd scp /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/hadoop-mapreduce-examples-2.4.1.jar 10.3.1.13:/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/
+JarCopyJob cmd scp /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/hadoop-mapreduce-examples-2.4.1.jar 10.3.1.7:/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/
+Jar copy Jobs finished
+TopCloud Report : RegionCloud Start Time = 1421649429233(ms)
+Start FedRegionCloudJobs
+run FedRegionCloudJob
+make region cloud command
+Arg 0 = 320Ga
+Arg 1 = wcOut
+Arg 2 = none
+Arg 3 = none
+Arg 4 = none
+Arg 5 = none
+Arg 6 = none
+Arg 7 = none
+Arg 8 = none
+Arg 9 = none
+RegionCloud cmd ssh 10.3.1.7 /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop jar /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/hadoop-mapreduce-examples-2.4.1.jar  wordcount -DregionCloud=on  -DtopCloudHDFS=hdfs://c02:39100/  -DregionCloudServerPort=55679  -DregionCloudOutput=c07_wc-YARN_OUT_20150119143706  -DregionCloudHadoopHome=/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1 -Dmapreduce.job.maps=4 -Dmapreduce.job.reduces=6 320Ga wcOut 
+run FedRegionCloudJob
+make region cloud command
+run FedRegionCloudJob
+make region cloud command
+Start FedCloudMonitorClient
+Arg 0 = 320Ga
+Arg 0 = 320Ga
+Arg 1 = wcOut
+Arg 1 = wcOut
+Arg 2 = none
+Arg 2 = none
+Arg 3 = none
+Arg 4 = none
+Arg 3 = none
+Arg 4 = none
+Arg 5 = none
+Arg 6 = none
+Arg 5 = none
+Arg 6 = none
+Arg 7 = none
+Arg 8 = none
+Arg 9 = none
+RegionCloud cmd ssh 10.3.1.13 /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop jar /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/hadoop-mapreduce-examples-2.4.1.jar  wordcount -DregionCloud=on  -DtopCloudHDFS=hdfs://c02:39100/  -DregionCloudServerPort=55679  -DregionCloudOutput=c13_wc-YARN_OUT_20150119143706  -DregionCloudHadoopHome=/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1 -Dmapreduce.job.maps=4 -Dmapreduce.job.reduces=6 320Ga wcOut 
+Arg 7 = none
+Wait For FedRegionCloudJob Join
+Arg 8 = none
+Arg 9 = none
+RegionCloud cmd ssh 10.3.1.19 /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop jar /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/fed_task/hadoop-mapreduce-examples-2.4.1.jar  wordcount -DregionCloud=on  -DtopCloudHDFS=hdfs://c02:39100/  -DregionCloudServerPort=55679  -DregionCloudOutput=c19_wc-YARN_OUT_20150119143706  -DregionCloudHadoopHome=/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1 -Dmapreduce.job.maps=4 -Dmapreduce.job.reduces=6 320Ga wcOut 
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at ncku.hpds.fed.MRv2.FedCloudMonitorClient.run(FedCloudMonitorClient.java:36)
+java.net.ConnectException: Connection refused
+connect to 10.3.1.13 failed reconnect 
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at ncku.hpds.fed.MRv2.FedCloudMonitorClient.run(FedCloudMonitorClient.java:36)
+connect to 10.3.1.19 failed reconnect 
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at ncku.hpds.fed.MRv2.FedCloudMonitorClient.run(FedCloudMonitorClient.java:36)
+connect to 10.3.1.7 failed reconnect 
+wc-YARN-c19-10.3.1.19>Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+wc-YARN-c19-10.3.1.19>###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+wc-YARN-c19-10.3.1.19>fed = off
+wc-YARN-c19-10.3.1.19>mFedFlag = false
+wc-YARN-c19-10.3.1.19>Run AS Region Cloud
+wc-YARN-c19-10.3.1.19>----------------------------------
+wc-YARN-c19-10.3.1.19>|        RegionCloud Mode        |
+wc-YARN-c19-10.3.1.19>----------------------------------
+wc-YARN-c19-10.3.1.19>Select ProxyReducer : ncku.hpds.fed.MRv2.ProxySelector.ProxyReducerTextInt
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:11 INFO client.RMProxy: Connecting to ResourceManager at c19/10.3.1.19:40832
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:12 INFO input.FileInputFormat: Total input paths to process : 634
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at ncku.hpds.fed.MRv2.FedCloudMonitorClient.run(FedCloudMonitorClient.java:36)
+connect to 10.3.1.13 failed reconnect 
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:345)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at ncku.hpds.fed.MRv2.FedCloudMonitorClient.run(FedCloudMonitorClient.java:36)
+connect to 10.3.1.7 failed reconnect 
+Client to 10.3.1.19  mRunFlag = true
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:13 INFO mapreduce.JobSubmitter: number of splits:2734
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:13 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1421649102131_0001
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:13 INFO impl.YarnClientImpl: Submitted application application_1421649102131_0001
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:13 INFO mapreduce.Job: The url to track the job: http://c19:40888/proxy/application_1421649102131_0001/
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:13 INFO mapreduce.Job: Running job: job_1421649102131_0001
+wc-YARN-c07-10.3.1.7>Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+wc-YARN-c07-10.3.1.7>###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+wc-YARN-c07-10.3.1.7>fed = off
+wc-YARN-c07-10.3.1.7>mFedFlag = false
+wc-YARN-c07-10.3.1.7>Run AS Region Cloud
+wc-YARN-c07-10.3.1.7>----------------------------------
+wc-YARN-c07-10.3.1.7>|        RegionCloud Mode        |
+wc-YARN-c07-10.3.1.7>----------------------------------
+wc-YARN-c07-10.3.1.7>Select ProxyReducer : ncku.hpds.fed.MRv2.ProxySelector.ProxyReducerTextInt
+wc-YARN-c13-10.3.1.13>Hadoop Home Path : /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+wc-YARN-c13-10.3.1.13>###### outputFormat.getCanonicalName() = org.apache.hadoop.mapreduce.lib.output.TextOutputFormat
+wc-YARN-c13-10.3.1.13>fed = off
+wc-YARN-c13-10.3.1.13>mFedFlag = false
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:12 INFO client.RMProxy: Connecting to ResourceManager at c07/10.3.1.7:40832
+wc-YARN-c13-10.3.1.13>Run AS Region Cloud
+wc-YARN-c13-10.3.1.13>----------------------------------
+wc-YARN-c13-10.3.1.13>|        RegionCloud Mode        |
+wc-YARN-c13-10.3.1.13>----------------------------------
+wc-YARN-c13-10.3.1.13>Select ProxyReducer : ncku.hpds.fed.MRv2.ProxySelector.ProxyReducerTextInt
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:12 INFO client.RMProxy: Connecting to ResourceManager at c13/10.3.1.13:40832
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:13 INFO input.FileInputFormat: Total input paths to process : 634
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:13 INFO input.FileInputFormat: Total input paths to process : 634
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:13 INFO mapreduce.JobSubmitter: number of splits:2734
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:14 INFO mapreduce.JobSubmitter: number of splits:2734
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:13 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1421649106647_0001
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:14 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1421649107518_0001
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:14 INFO impl.YarnClientImpl: Submitted application application_1421649106647_0001
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:14 INFO mapreduce.Job: The url to track the job: http://c13:40888/proxy/application_1421649106647_0001/
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:14 INFO mapreduce.Job: Running job: job_1421649106647_0001
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:14 INFO impl.YarnClientImpl: Submitted application application_1421649107518_0001
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:14 INFO mapreduce.Job: The url to track the job: http://c07:40888/proxy/application_1421649107518_0001/
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:14 INFO mapreduce.Job: Running job: job_1421649107518_0001
+Client to 10.3.1.13  mRunFlag = true
+Client to 10.3.1.7  mRunFlag = true
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:17 INFO mapreduce.Job: Job job_1421649102131_0001 running in uber mode : false
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:17 INFO mapreduce.Job:  map 0% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:18 INFO mapreduce.Job: Job job_1421649106647_0001 running in uber mode : false
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:18 INFO mapreduce.Job:  map 0% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:19 INFO mapreduce.Job: Job job_1421649107518_0001 running in uber mode : false
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:19 INFO mapreduce.Job:  map 0% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:37 INFO mapreduce.Job:  map 1% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:39 INFO mapreduce.Job:  map 1% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:38 INFO mapreduce.Job:  map 1% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:34:53 INFO mapreduce.Job:  map 2% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:34:54 INFO mapreduce.Job:  map 2% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:34:53 INFO mapreduce.Job:  map 2% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:35:12 INFO mapreduce.Job:  map 3% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:35:14 INFO mapreduce.Job:  map 3% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:35:13 INFO mapreduce.Job:  map 3% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:35:30 INFO mapreduce.Job:  map 4% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:35:31 INFO mapreduce.Job:  map 4% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:35:31 INFO mapreduce.Job:  map 4% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:35:48 INFO mapreduce.Job:  map 5% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:35:49 INFO mapreduce.Job:  map 5% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:35:49 INFO mapreduce.Job:  map 5% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:36:05 INFO mapreduce.Job:  map 6% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:36:06 INFO mapreduce.Job:  map 6% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:36:07 INFO mapreduce.Job:  map 6% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:36:24 INFO mapreduce.Job:  map 7% reduce 0%
+wc-YARN-c13-10.3.1.13>15/01/19 14:36:23 INFO mapreduce.Job:  map 7% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:36:25 INFO mapreduce.Job:  map 7% reduce 0%
+wc-YARN-c19-10.3.1.19>15/01/19 14:36:33 INFO mapreduce.Job:  map 7% reduce 1%
+wc-YARN-c07-10.3.1.7>15/01/19 14:36:42 INFO mapreduce.Job:  map 7% reduce 1%
+wc-YARN-c19-10.3.1.19>15/01/19 14:36:43 INFO mapreduce.Job:  map 8% reduce 1%
+wc-YARN-c13-10.3.1.13>15/01/19 14:36:43 INFO mapreduce.Job:  map 8% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 14:36:45 INFO mapreduce.Job:  map 8% reduce 1%
+wc-YARN-c13-10.3.1.13>15/01/19 14:36:51 INFO mapreduce.Job:  map 8% reduce 1%
+wc-YARN-c19-10.3.1.19>15/01/19 14:37:02 INFO mapreduce.Job:  map 9% reduce 1%
+wc-YARN-c07-10.3.1.7>15/01/19 14:37:03 INFO mapreduce.Job:  map 9% reduce 1%
+wc-YARN-c13-10.3.1.13>15/01/19 14:37:02 INFO mapreduce.Job:  map 9% reduce 1%
+wc-YARN-c19-10.3.1.19>15/01/19 14:37:21 INFO mapreduce.Job:  map 10% reduce 1%
+wc-YARN-c13-10.3.1.13>15/01/19 14:37:21 INFO mapreduce.Job:  map 10% reduce 1%
+wc-YARN-c07-10.3.1.7>15/01/19 14:37:23 INFO mapreduce.Job:  map 10% reduce 1%
+wc-YARN-c19-10.3.1.19>15/01/19 14:37:32 INFO mapreduce.Job:  map 10% reduce 2%
+wc-YARN-c07-10.3.1.7>15/01/19 14:37:39 INFO mapreduce.Job:  map 10% reduce 2%
+wc-YARN-c19-10.3.1.19>15/01/19 14:37:40 INFO mapreduce.Job:  map 11% reduce 2%
+wc-YARN-c13-10.3.1.13>15/01/19 14:37:39 INFO mapreduce.Job:  map 11% reduce 1%
+wc-YARN-c07-10.3.1.7>15/01/19 14:37:42 INFO mapreduce.Job:  map 11% reduce 2%
+wc-YARN-c13-10.3.1.13>15/01/19 14:37:58 INFO mapreduce.Job:  map 12% reduce 1%
+wc-YARN-c19-10.3.1.19>15/01/19 14:38:00 INFO mapreduce.Job:  map 12% reduce 2%
+wc-YARN-c07-10.3.1.7>15/01/19 14:38:01 INFO mapreduce.Job:  map 12% reduce 2%
+wc-YARN-c13-10.3.1.13>15/01/19 14:38:08 INFO mapreduce.Job:  map 12% reduce 2%
+wc-YARN-c19-10.3.1.19>15/01/19 14:38:22 INFO mapreduce.Job:  map 13% reduce 2%
+wc-YARN-c13-10.3.1.13>15/01/19 14:38:20 INFO mapreduce.Job:  map 13% reduce 2%
+wc-YARN-c07-10.3.1.7>15/01/19 14:38:21 INFO mapreduce.Job:  map 13% reduce 2%
+wc-YARN-c19-10.3.1.19>15/01/19 14:38:27 INFO mapreduce.Job:  map 13% reduce 3%
+wc-YARN-c07-10.3.1.7>15/01/19 14:38:29 INFO mapreduce.Job:  map 13% reduce 3%
+wc-YARN-c13-10.3.1.13>15/01/19 14:38:39 INFO mapreduce.Job:  map 14% reduce 2%
+wc-YARN-c19-10.3.1.19>15/01/19 14:38:42 INFO mapreduce.Job:  map 14% reduce 3%
+wc-YARN-c07-10.3.1.7>15/01/19 14:38:43 INFO mapreduce.Job:  map 14% reduce 3%
+wc-YARN-c13-10.3.1.13>15/01/19 14:38:57 INFO mapreduce.Job:  map 15% reduce 2%
+wc-YARN-c19-10.3.1.19>15/01/19 14:39:02 INFO mapreduce.Job:  map 15% reduce 3%
+wc-YARN-c07-10.3.1.7>15/01/19 14:39:03 INFO mapreduce.Job:  map 15% reduce 3%
+wc-YARN-c13-10.3.1.13>15/01/19 14:39:02 INFO mapreduce.Job:  map 15% reduce 3%
+wc-YARN-c19-10.3.1.19>15/01/19 14:39:10 INFO mapreduce.Job:  map 15% reduce 4%
+wc-YARN-c07-10.3.1.7>15/01/19 14:39:13 INFO mapreduce.Job:  map 15% reduce 4%
+wc-YARN-c13-10.3.1.13>15/01/19 14:39:19 INFO mapreduce.Job:  map 16% reduce 3%
+wc-YARN-c19-10.3.1.19>15/01/19 14:39:24 INFO mapreduce.Job:  map 16% reduce 4%
+wc-YARN-c07-10.3.1.7>15/01/19 14:39:24 INFO mapreduce.Job:  map 16% reduce 4%
+wc-YARN-c13-10.3.1.13>15/01/19 14:39:40 INFO mapreduce.Job:  map 17% reduce 3%
+wc-YARN-c19-10.3.1.19>15/01/19 14:39:44 INFO mapreduce.Job:  map 17% reduce 4%
+wc-YARN-c07-10.3.1.7>15/01/19 14:39:47 INFO mapreduce.Job:  map 17% reduce 4%
+wc-YARN-c13-10.3.1.13>15/01/19 14:39:59 INFO mapreduce.Job:  map 18% reduce 3%
+wc-YARN-c19-10.3.1.19>15/01/19 14:40:03 INFO mapreduce.Job:  map 17% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:40:05 INFO mapreduce.Job:  map 18% reduce 5%
+wc-YARN-c13-10.3.1.13>15/01/19 14:40:04 INFO mapreduce.Job:  map 18% reduce 4%
+wc-YARN-c07-10.3.1.7>15/01/19 14:40:08 INFO mapreduce.Job:  map 18% reduce 4%
+wc-YARN-c07-10.3.1.7>15/01/19 14:40:09 INFO mapreduce.Job:  map 18% reduce 5%
+wc-YARN-c13-10.3.1.13>15/01/19 14:40:20 INFO mapreduce.Job:  map 19% reduce 4%
+wc-YARN-c19-10.3.1.19>15/01/19 14:40:26 INFO mapreduce.Job:  map 19% reduce 5%
+wc-YARN-c07-10.3.1.7>15/01/19 14:40:28 INFO mapreduce.Job:  map 19% reduce 5%
+wc-YARN-c13-10.3.1.13>15/01/19 14:40:42 INFO mapreduce.Job:  map 20% reduce 4%
+wc-YARN-c19-10.3.1.19>15/01/19 14:40:48 INFO mapreduce.Job:  map 20% reduce 5%
+wc-YARN-c07-10.3.1.7>15/01/19 14:40:50 INFO mapreduce.Job:  map 20% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:41:00 INFO mapreduce.Job:  map 20% reduce 6%
+wc-YARN-c13-10.3.1.13>15/01/19 14:41:03 INFO mapreduce.Job:  map 21% reduce 4%
+wc-YARN-c19-10.3.1.19>15/01/19 14:41:08 INFO mapreduce.Job:  map 21% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:41:10 INFO mapreduce.Job:  map 20% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:41:12 INFO mapreduce.Job:  map 21% reduce 6%
+wc-YARN-c13-10.3.1.13>15/01/19 14:41:12 INFO mapreduce.Job:  map 21% reduce 5%
+wc-YARN-c13-10.3.1.13>15/01/19 14:41:25 INFO mapreduce.Job:  map 22% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:41:29 INFO mapreduce.Job:  map 22% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:41:31 INFO mapreduce.Job:  map 22% reduce 6%
+wc-YARN-c19-10.3.1.19>15/01/19 14:41:42 INFO mapreduce.Job: Task Id : attempt_1421649102131_0001_r_000003_0, Status : FAILED
+wc-YARN-c19-10.3.1.19>Error: org.apache.hadoop.mapreduce.task.reduce.Shuffle$ShuffleError: error in shuffle in fetcher#2
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Shuffle.run(Shuffle.java:134)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:376)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:167)
+wc-YARN-c19-10.3.1.19>	at java.security.AccessController.doPrivileged(Native Method)
+wc-YARN-c19-10.3.1.19>	at javax.security.auth.Subject.doAs(Subject.java:422)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1556)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+wc-YARN-c19-10.3.1.19>Caused by: java.lang.OutOfMemoryError: Java heap space
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:56)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:46)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput.<init>(InMemoryMapOutput.java:63)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.unconditionalReserve(MergeManagerImpl.java:297)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.reserve(MergeManagerImpl.java:287)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyMapOutput(Fetcher.java:411)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Fetcher.java:341)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.run(Fetcher.java:165)
+wc-YARN-c19-10.3.1.19>
+wc-YARN-c19-10.3.1.19>Container killed by the ApplicationMaster.
+wc-YARN-c19-10.3.1.19>Container killed on request. Exit code is 143
+wc-YARN-c19-10.3.1.19>Container exited with a non-zero exit code 143
+wc-YARN-c19-10.3.1.19>
+wc-YARN-c19-10.3.1.19>15/01/19 14:41:45 INFO mapreduce.Job:  map 22% reduce 5%
+wc-YARN-c13-10.3.1.13>15/01/19 14:41:46 INFO mapreduce.Job:  map 23% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:41:50 INFO mapreduce.Job:  map 23% reduce 5%
+wc-YARN-c07-10.3.1.7>15/01/19 14:41:55 INFO mapreduce.Job:  map 23% reduce 6%
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:03 INFO mapreduce.Job:  map 23% reduce 6%
+wc-YARN-c13-10.3.1.13>15/01/19 14:42:08 INFO mapreduce.Job:  map 24% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:10 INFO mapreduce.Job: Task Id : attempt_1421649102131_0001_r_000005_0, Status : FAILED
+wc-YARN-c19-10.3.1.19>Error: org.apache.hadoop.mapreduce.task.reduce.Shuffle$ShuffleError: error in shuffle in fetcher#3
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Shuffle.run(Shuffle.java:134)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:376)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:167)
+wc-YARN-c19-10.3.1.19>	at java.security.AccessController.doPrivileged(Native Method)
+wc-YARN-c19-10.3.1.19>	at javax.security.auth.Subject.doAs(Subject.java:422)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1556)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+wc-YARN-c19-10.3.1.19>Caused by: java.lang.OutOfMemoryError: Java heap space
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:56)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:46)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput.<init>(InMemoryMapOutput.java:63)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.unconditionalReserve(MergeManagerImpl.java:297)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.reserve(MergeManagerImpl.java:287)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyMapOutput(Fetcher.java:411)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Fetcher.java:341)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.run(Fetcher.java:165)
+wc-YARN-c19-10.3.1.19>
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:11 INFO mapreduce.Job:  map 23% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:12 INFO mapreduce.Job:  map 24% reduce 5%
+wc-YARN-c07-10.3.1.7>15/01/19 14:42:14 INFO mapreduce.Job:  map 23% reduce 7%
+wc-YARN-c07-10.3.1.7>15/01/19 14:42:17 INFO mapreduce.Job:  map 24% reduce 7%
+wc-YARN-c13-10.3.1.13>15/01/19 14:42:29 INFO mapreduce.Job:  map 25% reduce 5%
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:34 INFO mapreduce.Job:  map 25% reduce 5%
+wc-YARN-c13-10.3.1.13>15/01/19 14:42:34 INFO mapreduce.Job:  map 25% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:42:38 INFO mapreduce.Job:  map 25% reduce 7%
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:42 INFO mapreduce.Job:  map 25% reduce 6%
+wc-YARN-c13-10.3.1.13>15/01/19 14:42:50 INFO mapreduce.Job:  map 26% reduce 6%
+wc-YARN-c19-10.3.1.19>15/01/19 14:42:57 INFO mapreduce.Job:  map 26% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:43:00 INFO mapreduce.Job:  map 26% reduce 7%
+wc-YARN-c19-10.3.1.19>15/01/19 14:43:05 INFO mapreduce.Job: Task Id : attempt_1421649102131_0001_r_000005_1, Status : FAILED
+wc-YARN-c19-10.3.1.19>Error: org.apache.hadoop.mapreduce.task.reduce.Shuffle$ShuffleError: error in shuffle in fetcher#5
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Shuffle.run(Shuffle.java:134)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:376)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:167)
+wc-YARN-c19-10.3.1.19>	at java.security.AccessController.doPrivileged(Native Method)
+wc-YARN-c19-10.3.1.19>	at javax.security.auth.Subject.doAs(Subject.java:422)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1556)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+wc-YARN-c19-10.3.1.19>Caused by: java.lang.OutOfMemoryError: Java heap space
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:56)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:46)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput.<init>(InMemoryMapOutput.java:63)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.unconditionalReserve(MergeManagerImpl.java:297)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.reserve(MergeManagerImpl.java:287)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyMapOutput(Fetcher.java:411)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Fetcher.java:341)
+wc-YARN-c19-10.3.1.19>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.run(Fetcher.java:165)
+wc-YARN-c19-10.3.1.19>
+wc-YARN-c13-10.3.1.13>15/01/19 14:43:12 INFO mapreduce.Job:  map 27% reduce 6%
+wc-YARN-c19-10.3.1.19>15/01/19 14:43:19 INFO mapreduce.Job:  map 27% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:43:19 INFO mapreduce.Job:  map 26% reduce 8%
+wc-YARN-c07-10.3.1.7>15/01/19 14:43:20 INFO mapreduce.Job:  map 27% reduce 8%
+wc-YARN-c13-10.3.1.13>15/01/19 14:43:33 INFO mapreduce.Job:  map 28% reduce 6%
+wc-YARN-c07-10.3.1.7>15/01/19 14:43:42 INFO mapreduce.Job:  map 28% reduce 8%
+wc-YARN-c19-10.3.1.19>15/01/19 14:43:44 INFO mapreduce.Job:  map 28% reduce 6%
+wc-YARN-c13-10.3.1.13>15/01/19 14:43:47 INFO mapreduce.Job:  map 28% reduce 7%
+wc-YARN-c19-10.3.1.19>15/01/19 14:43:53 INFO mapreduce.Job:  map 28% reduce 7%
+wc-YARN-c13-10.3.1.13>15/01/19 14:43:57 INFO mapreduce.Job:  map 29% reduce 7%
+wc-YARN-c19-10.3.1.19>15/01/19 14:44:03 INFO mapreduce.Job:  map 29% reduce 7%
+wc-YARN-c07-10.3.1.7>15/01/19 14:44:04 INFO mapreduce.Job:  map 29% reduce 8%
+wc-YARN-c13-10.3.1.13>15/01/19 14:44:19 INFO mapreduce.Job:  map 30% reduce 7%
+wc-YARN-c07-10.3.1.7>15/01/19 14:44:21 INFO mapreduce.Job:  map 29% reduce 9%
+wc-YARN-c07-10.3.1.7>15/01/19 14:44:25 INFO mapreduce.Job:  map 30% reduce 9%
+wc-YARN-c19-10.3.1.19>15/01/19 14:44:27 INFO mapreduce.Job:  map 30% reduce 7%
+wc-YARN-c13-10.3.1.13>15/01/19 14:44:39 INFO mapreduce.Job:  map 31% reduce 7%
+wc-YARN-c19-10.3.1.19>15/01/19 14:44:46 INFO mapreduce.Job:  map 31% reduce 7%
+wc-YARN-c07-10.3.1.7>15/01/19 14:44:48 INFO mapreduce.Job:  map 31% reduce 9%
+wc-YARN-c19-10.3.1.19>15/01/19 14:44:50 INFO mapreduce.Job:  map 31% reduce 8%
+wc-YARN-c13-10.3.1.13>15/01/19 14:44:57 INFO mapreduce.Job:  map 31% reduce 8%
+wc-YARN-c13-10.3.1.13>15/01/19 14:45:00 INFO mapreduce.Job:  map 32% reduce 8%
+wc-YARN-c19-10.3.1.19>15/01/19 14:45:08 INFO mapreduce.Job:  map 32% reduce 8%
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:09 INFO mapreduce.Job:  map 32% reduce 9%
+wc-YARN-c13-10.3.1.13>15/01/19 14:45:20 INFO mapreduce.Job:  map 33% reduce 8%
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:25 INFO mapreduce.Job:  map 32% reduce 10%
+wc-YARN-c19-10.3.1.19>15/01/19 14:45:27 INFO mapreduce.Job:  map 33% reduce 8%
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:28 INFO mapreduce.Job:  map 33% reduce 10%
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:36 INFO mapreduce.Job: Task Id : attempt_1421649107518_0001_r_000005_0, Status : FAILED
+wc-YARN-c07-10.3.1.7>Error: org.apache.hadoop.mapreduce.task.reduce.Shuffle$ShuffleError: error in shuffle in fetcher#4
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.Shuffle.run(Shuffle.java:134)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:376)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:167)
+wc-YARN-c07-10.3.1.7>	at java.security.AccessController.doPrivileged(Native Method)
+wc-YARN-c07-10.3.1.7>	at javax.security.auth.Subject.doAs(Subject.java:422)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1556)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+wc-YARN-c07-10.3.1.7>Caused by: java.lang.OutOfMemoryError: Java heap space
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:56)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:46)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput.<init>(InMemoryMapOutput.java:63)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.unconditionalReserve(MergeManagerImpl.java:297)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.reserve(MergeManagerImpl.java:287)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyMapOutput(Fetcher.java:411)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Fetcher.java:341)
+wc-YARN-c07-10.3.1.7>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.run(Fetcher.java:165)
+wc-YARN-c07-10.3.1.7>
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:37 INFO mapreduce.Job:  map 33% reduce 8%
+wc-YARN-c13-10.3.1.13>15/01/19 14:45:40 INFO mapreduce.Job:  map 34% reduce 8%
+wc-YARN-c19-10.3.1.19>15/01/19 14:45:45 INFO mapreduce.Job:  map 33% reduce 9%
+wc-YARN-c19-10.3.1.19>15/01/19 14:45:49 INFO mapreduce.Job:  map 34% reduce 9%
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:50 INFO mapreduce.Job:  map 34% reduce 8%
+wc-YARN-c07-10.3.1.7>15/01/19 14:45:57 INFO mapreduce.Job:  map 34% reduce 9%
+wc-YARN-c13-10.3.1.13>15/01/19 14:46:01 INFO mapreduce.Job:  map 35% reduce 9%
+wc-YARN-c19-10.3.1.19>15/01/19 14:46:09 INFO mapreduce.Job:  map 35% reduce 9%
+wc-YARN-c07-10.3.1.7>15/01/19 14:46:12 INFO mapreduce.Job:  map 35% reduce 9%
+wc-YARN-c13-10.3.1.13>15/01/19 14:46:21 INFO mapreduce.Job:  map 36% reduce 9%
+wc-YARN-c19-10.3.1.19>15/01/19 14:46:32 INFO mapreduce.Job:  map 36% reduce 9%
+wc-YARN-c07-10.3.1.7>15/01/19 14:46:32 INFO mapreduce.Job:  map 36% reduce 9%
+wc-YARN-c19-10.3.1.19>15/01/19 14:46:40 INFO mapreduce.Job:  map 36% reduce 10%
+wc-YARN-c13-10.3.1.13>15/01/19 14:46:42 INFO mapreduce.Job:  map 37% reduce 9%
+wc-YARN-c07-10.3.1.7>15/01/19 14:46:48 INFO mapreduce.Job:  map 36% reduce 10%
+wc-YARN-c19-10.3.1.19>15/01/19 14:46:50 INFO mapreduce.Job:  map 37% reduce 10%
+wc-YARN-c07-10.3.1.7>15/01/19 14:46:51 INFO mapreduce.Job:  map 37% reduce 10%
+wc-YARN-c13-10.3.1.13>15/01/19 14:47:01 INFO mapreduce.Job:  map 38% reduce 9%
+wc-YARN-c13-10.3.1.13>15/01/19 14:47:06 INFO mapreduce.Job:  map 38% reduce 10%
+wc-YARN-c07-10.3.1.7>15/01/19 14:47:11 INFO mapreduce.Job:  map 38% reduce 10%
+wc-YARN-c19-10.3.1.19>15/01/19 14:47:13 INFO mapreduce.Job:  map 38% reduce 10%
+wc-YARN-c13-10.3.1.13>15/01/19 14:47:21 INFO mapreduce.Job:  map 39% reduce 10%
+wc-YARN-c19-10.3.1.19>15/01/19 14:47:28 INFO mapreduce.Job:  map 38% reduce 11%
+wc-YARN-c07-10.3.1.7>15/01/19 14:47:31 INFO mapreduce.Job:  map 39% reduce 10%
+wc-YARN-c19-10.3.1.19>15/01/19 14:47:35 INFO mapreduce.Job:  map 39% reduce 11%
+wc-YARN-c07-10.3.1.7>15/01/19 14:47:39 INFO mapreduce.Job:  map 39% reduce 11%
+wc-YARN-c13-10.3.1.13>15/01/19 14:47:42 INFO mapreduce.Job:  map 40% reduce 10%
+wc-YARN-c07-10.3.1.7>15/01/19 14:47:53 INFO mapreduce.Job:  map 40% reduce 11%
+wc-YARN-c19-10.3.1.19>15/01/19 14:47:57 INFO mapreduce.Job:  map 40% reduce 11%
+wc-YARN-c13-10.3.1.13>15/01/19 14:48:01 INFO mapreduce.Job:  map 41% reduce 10%
+wc-YARN-c13-10.3.1.13>15/01/19 14:48:07 INFO mapreduce.Job:  map 41% reduce 11%
+wc-YARN-c07-10.3.1.7>15/01/19 14:48:13 INFO mapreduce.Job:  map 41% reduce 11%
+wc-YARN-c19-10.3.1.19>15/01/19 14:48:16 INFO mapreduce.Job:  map 40% reduce 12%
+wc-YARN-c19-10.3.1.19>15/01/19 14:48:19 INFO mapreduce.Job:  map 41% reduce 12%
+wc-YARN-c13-10.3.1.13>15/01/19 14:48:21 INFO mapreduce.Job:  map 42% reduce 11%
+wc-YARN-c07-10.3.1.7>15/01/19 14:48:33 INFO mapreduce.Job:  map 42% reduce 11%
+wc-YARN-c07-10.3.1.7>15/01/19 14:48:34 INFO mapreduce.Job:  map 42% reduce 12%
+wc-YARN-c19-10.3.1.19>15/01/19 14:48:39 INFO mapreduce.Job:  map 42% reduce 12%
+wc-YARN-c13-10.3.1.13>15/01/19 14:48:40 INFO mapreduce.Job:  map 43% reduce 11%
+wc-YARN-c07-10.3.1.7>15/01/19 14:48:53 INFO mapreduce.Job:  map 43% reduce 12%
+wc-YARN-c13-10.3.1.13>15/01/19 14:49:00 INFO mapreduce.Job:  map 44% reduce 11%
+wc-YARN-c19-10.3.1.19>15/01/19 14:49:03 INFO mapreduce.Job:  map 43% reduce 12%
+wc-YARN-c13-10.3.1.13>15/01/19 14:49:01 INFO mapreduce.Job:  map 44% reduce 12%
+wc-YARN-c19-10.3.1.19>15/01/19 14:49:09 INFO mapreduce.Job:  map 43% reduce 13%
+wc-YARN-c07-10.3.1.7>15/01/19 14:49:15 INFO mapreduce.Job:  map 44% reduce 12%
+wc-YARN-c13-10.3.1.13>15/01/19 14:49:21 INFO mapreduce.Job:  map 45% reduce 12%
+wc-YARN-c19-10.3.1.19>15/01/19 14:49:23 INFO mapreduce.Job:  map 44% reduce 13%
+wc-YARN-c07-10.3.1.7>15/01/19 14:49:26 INFO mapreduce.Job:  map 44% reduce 13%
+wc-YARN-c07-10.3.1.7>15/01/19 14:49:36 INFO mapreduce.Job:  map 45% reduce 13%
+wc-YARN-c13-10.3.1.13>15/01/19 14:49:39 INFO mapreduce.Job:  map 46% reduce 12%
+wc-YARN-c19-10.3.1.19>15/01/19 14:49:44 INFO mapreduce.Job:  map 45% reduce 13%
+wc-YARN-c13-10.3.1.13>15/01/19 14:49:53 INFO mapreduce.Job:  map 46% reduce 13%
+wc-YARN-c07-10.3.1.7>15/01/19 14:49:55 INFO mapreduce.Job:  map 46% reduce 13%
+wc-YARN-c13-10.3.1.13>15/01/19 14:49:58 INFO mapreduce.Job:  map 47% reduce 13%
+wc-YARN-c19-10.3.1.19>15/01/19 14:50:06 INFO mapreduce.Job:  map 46% reduce 13%
+wc-YARN-c19-10.3.1.19>15/01/19 14:50:08 INFO mapreduce.Job:  map 46% reduce 14%
+wc-YARN-c07-10.3.1.7>15/01/19 14:50:17 INFO mapreduce.Job:  map 47% reduce 13%
+wc-YARN-c07-10.3.1.7>15/01/19 14:50:19 INFO mapreduce.Job:  map 47% reduce 14%
+wc-YARN-c13-10.3.1.13>15/01/19 14:50:19 INFO mapreduce.Job:  map 48% reduce 13%
+wc-YARN-c19-10.3.1.19>15/01/19 14:50:28 INFO mapreduce.Job:  map 47% reduce 14%
+wc-YARN-c07-10.3.1.7>15/01/19 14:50:38 INFO mapreduce.Job:  map 48% reduce 14%
+wc-YARN-c13-10.3.1.13>15/01/19 14:50:39 INFO mapreduce.Job:  map 49% reduce 13%
+wc-YARN-c13-10.3.1.13>15/01/19 14:50:48 INFO mapreduce.Job:  map 49% reduce 14%
+wc-YARN-c19-10.3.1.19>15/01/19 14:50:52 INFO mapreduce.Job:  map 48% reduce 14%
+wc-YARN-c07-10.3.1.7>15/01/19 14:50:58 INFO mapreduce.Job:  map 49% reduce 14%
+wc-YARN-c13-10.3.1.13>15/01/19 14:50:58 INFO mapreduce.Job:  map 50% reduce 14%
+wc-YARN-c19-10.3.1.19>15/01/19 14:51:04 INFO mapreduce.Job:  map 48% reduce 15%
+wc-YARN-c19-10.3.1.19>15/01/19 14:51:12 INFO mapreduce.Job:  map 49% reduce 15%
+wc-YARN-c07-10.3.1.7>15/01/19 14:51:13 INFO mapreduce.Job:  map 49% reduce 15%
+wc-YARN-c07-10.3.1.7>15/01/19 14:51:19 INFO mapreduce.Job:  map 50% reduce 15%
+wc-YARN-c13-10.3.1.13>15/01/19 14:51:19 INFO mapreduce.Job:  map 51% reduce 14%
+wc-YARN-c19-10.3.1.19>15/01/19 14:51:33 INFO mapreduce.Job:  map 50% reduce 15%
+wc-YARN-c13-10.3.1.13>15/01/19 14:51:38 INFO mapreduce.Job:  map 52% reduce 15%
+wc-YARN-c07-10.3.1.7>15/01/19 14:51:39 INFO mapreduce.Job:  map 51% reduce 15%
+wc-YARN-c19-10.3.1.19>15/01/19 14:51:55 INFO mapreduce.Job:  map 51% reduce 15%
+wc-YARN-c13-10.3.1.13>15/01/19 14:51:57 INFO mapreduce.Job:  map 53% reduce 15%
+wc-YARN-c07-10.3.1.7>15/01/19 14:52:00 INFO mapreduce.Job:  map 52% reduce 15%
+wc-YARN-c19-10.3.1.19>15/01/19 14:52:03 INFO mapreduce.Job:  map 51% reduce 16%
+wc-YARN-c07-10.3.1.7>15/01/19 14:52:07 INFO mapreduce.Job:  map 52% reduce 16%
+wc-YARN-c19-10.3.1.19>15/01/19 14:52:15 INFO mapreduce.Job:  map 52% reduce 16%
+wc-YARN-c13-10.3.1.13>15/01/19 14:52:16 INFO mapreduce.Job:  map 54% reduce 15%
+wc-YARN-c07-10.3.1.7>15/01/19 14:52:20 INFO mapreduce.Job:  map 53% reduce 16%
+wc-YARN-c13-10.3.1.13>15/01/19 14:52:29 INFO mapreduce.Job:  map 54% reduce 16%
+wc-YARN-c13-10.3.1.13>15/01/19 14:52:36 INFO mapreduce.Job:  map 55% reduce 16%
+wc-YARN-c19-10.3.1.19>15/01/19 14:52:38 INFO mapreduce.Job:  map 53% reduce 16%
+wc-YARN-c07-10.3.1.7>15/01/19 14:52:41 INFO mapreduce.Job:  map 54% reduce 16%
+wc-YARN-c19-10.3.1.19>15/01/19 14:52:54 INFO mapreduce.Job:  map 53% reduce 17%
+wc-YARN-c19-10.3.1.19>15/01/19 14:52:59 INFO mapreduce.Job:  map 54% reduce 17%
+wc-YARN-c13-10.3.1.13>15/01/19 14:52:57 INFO mapreduce.Job:  map 56% reduce 16%
+wc-YARN-c07-10.3.1.7>15/01/19 14:53:02 INFO mapreduce.Job:  map 55% reduce 16%
+wc-YARN-c07-10.3.1.7>15/01/19 14:53:05 INFO mapreduce.Job:  map 55% reduce 17%
+wc-YARN-c13-10.3.1.13>15/01/19 14:53:16 INFO mapreduce.Job:  map 57% reduce 16%
+wc-YARN-c19-10.3.1.19>15/01/19 14:53:20 INFO mapreduce.Job:  map 55% reduce 17%
+wc-YARN-c13-10.3.1.13>15/01/19 14:53:20 INFO mapreduce.Job:  map 57% reduce 17%
+wc-YARN-c07-10.3.1.7>15/01/19 14:53:25 INFO mapreduce.Job:  map 56% reduce 17%
+wc-YARN-c13-10.3.1.13>15/01/19 14:53:36 INFO mapreduce.Job:  map 58% reduce 17%
+wc-YARN-c19-10.3.1.19>15/01/19 14:53:40 INFO mapreduce.Job:  map 56% reduce 17%
+wc-YARN-c07-10.3.1.7>15/01/19 14:53:43 INFO mapreduce.Job:  map 57% reduce 17%
+wc-YARN-c19-10.3.1.19>15/01/19 14:53:52 INFO mapreduce.Job:  map 56% reduce 18%
+wc-YARN-c13-10.3.1.13>15/01/19 14:53:56 INFO mapreduce.Job:  map 59% reduce 17%
+wc-YARN-c19-10.3.1.19>15/01/19 14:54:02 INFO mapreduce.Job:  map 57% reduce 18%
+wc-YARN-c07-10.3.1.7>15/01/19 14:54:03 INFO mapreduce.Job:  map 57% reduce 18%
+wc-YARN-c07-10.3.1.7>15/01/19 14:54:06 INFO mapreduce.Job:  map 58% reduce 18%
+wc-YARN-c13-10.3.1.13>15/01/19 14:54:11 INFO mapreduce.Job:  map 59% reduce 18%
+wc-YARN-c13-10.3.1.13>15/01/19 14:54:16 INFO mapreduce.Job:  map 60% reduce 18%
+wc-YARN-c19-10.3.1.19>15/01/19 14:54:21 INFO mapreduce.Job:  map 58% reduce 18%
+wc-YARN-c07-10.3.1.7>15/01/19 14:54:26 INFO mapreduce.Job:  map 59% reduce 18%
+wc-YARN-c13-10.3.1.13>15/01/19 14:54:36 INFO mapreduce.Job:  map 61% reduce 18%
+wc-YARN-c19-10.3.1.19>15/01/19 14:54:44 INFO mapreduce.Job:  map 59% reduce 18%
+wc-YARN-c07-10.3.1.7>15/01/19 14:54:45 INFO mapreduce.Job:  map 60% reduce 18%
+wc-YARN-c19-10.3.1.19>15/01/19 14:54:51 INFO mapreduce.Job:  map 59% reduce 19%
+wc-YARN-c13-10.3.1.13>15/01/19 14:54:56 INFO mapreduce.Job:  map 62% reduce 18%
+wc-YARN-c07-10.3.1.7>15/01/19 14:54:58 INFO mapreduce.Job:  map 60% reduce 19%
+wc-YARN-c13-10.3.1.13>15/01/19 14:55:01 INFO mapreduce.Job:  map 62% reduce 19%
+wc-YARN-c19-10.3.1.19>15/01/19 14:55:05 INFO mapreduce.Job:  map 60% reduce 19%
+wc-YARN-c07-10.3.1.7>15/01/19 14:55:08 INFO mapreduce.Job:  map 61% reduce 19%
+wc-YARN-c13-10.3.1.13>15/01/19 14:55:17 INFO mapreduce.Job:  map 63% reduce 19%
+wc-YARN-c19-10.3.1.19>15/01/19 14:55:25 INFO mapreduce.Job:  map 61% reduce 19%
+wc-YARN-c07-10.3.1.7>15/01/19 14:55:30 INFO mapreduce.Job:  map 62% reduce 19%
+wc-YARN-c13-10.3.1.13>15/01/19 14:55:36 INFO mapreduce.Job:  map 64% reduce 19%
+wc-YARN-c19-10.3.1.19>15/01/19 14:55:46 INFO mapreduce.Job:  map 61% reduce 20%
+wc-YARN-c19-10.3.1.19>15/01/19 14:55:47 INFO mapreduce.Job:  map 62% reduce 20%
+wc-YARN-c07-10.3.1.7>15/01/19 14:55:49 INFO mapreduce.Job:  map 63% reduce 19%
+wc-YARN-c13-10.3.1.13>15/01/19 14:55:49 INFO mapreduce.Job:  map 64% reduce 20%
+wc-YARN-c07-10.3.1.7>15/01/19 14:55:55 INFO mapreduce.Job:  map 63% reduce 20%
+wc-YARN-c13-10.3.1.13>15/01/19 14:55:56 INFO mapreduce.Job:  map 65% reduce 20%
+wc-YARN-c19-10.3.1.19>15/01/19 14:56:09 INFO mapreduce.Job:  map 63% reduce 20%
+wc-YARN-c07-10.3.1.7>15/01/19 14:56:13 INFO mapreduce.Job:  map 64% reduce 20%
+wc-YARN-c13-10.3.1.13>15/01/19 14:56:16 INFO mapreduce.Job:  map 66% reduce 20%
+wc-YARN-c19-10.3.1.19>15/01/19 14:56:30 INFO mapreduce.Job:  map 64% reduce 20%
+wc-YARN-c07-10.3.1.7>15/01/19 14:56:35 INFO mapreduce.Job:  map 65% reduce 20%
+wc-YARN-c13-10.3.1.13>15/01/19 14:56:37 INFO mapreduce.Job:  map 67% reduce 20%
+wc-YARN-c13-10.3.1.13>15/01/19 14:56:39 INFO mapreduce.Job:  map 67% reduce 21%
+wc-YARN-c19-10.3.1.19>15/01/19 14:56:44 INFO mapreduce.Job:  map 64% reduce 21%
+wc-YARN-c19-10.3.1.19>15/01/19 14:56:52 INFO mapreduce.Job:  map 65% reduce 21%
+wc-YARN-c07-10.3.1.7>15/01/19 14:56:53 INFO mapreduce.Job:  map 66% reduce 20%
+wc-YARN-c13-10.3.1.13>15/01/19 14:56:55 INFO mapreduce.Job:  map 68% reduce 21%
+wc-YARN-c07-10.3.1.7>15/01/19 14:56:57 INFO mapreduce.Job:  map 66% reduce 21%
+wc-YARN-c19-10.3.1.19>15/01/19 14:57:14 INFO mapreduce.Job:  map 66% reduce 21%
+wc-YARN-c07-10.3.1.7>15/01/19 14:57:16 INFO mapreduce.Job:  map 67% reduce 21%
+wc-YARN-c13-10.3.1.13>15/01/19 14:57:17 INFO mapreduce.Job:  map 69% reduce 21%
+wc-YARN-c13-10.3.1.13>15/01/19 14:57:34 INFO mapreduce.Job:  map 69% reduce 22%
+wc-YARN-c19-10.3.1.19>15/01/19 14:57:36 INFO mapreduce.Job:  map 67% reduce 21%
+wc-YARN-c07-10.3.1.7>15/01/19 14:57:36 INFO mapreduce.Job:  map 68% reduce 21%
+wc-YARN-c13-10.3.1.13>15/01/19 14:57:36 INFO mapreduce.Job:  map 70% reduce 22%
+wc-YARN-c19-10.3.1.19>15/01/19 14:57:42 INFO mapreduce.Job:  map 67% reduce 22%
+wc-YARN-c07-10.3.1.7>15/01/19 14:57:55 INFO mapreduce.Job:  map 69% reduce 22%
+wc-YARN-c13-10.3.1.13>15/01/19 14:57:56 INFO mapreduce.Job:  map 71% reduce 22%
+wc-YARN-c19-10.3.1.19>15/01/19 14:58:00 INFO mapreduce.Job:  map 68% reduce 22%
+wc-YARN-c07-10.3.1.7>15/01/19 14:58:18 INFO mapreduce.Job:  map 70% reduce 22%
+wc-YARN-c13-10.3.1.13>15/01/19 14:58:17 INFO mapreduce.Job:  map 72% reduce 22%
+wc-YARN-c19-10.3.1.19>15/01/19 14:58:21 INFO mapreduce.Job:  map 69% reduce 22%
+wc-YARN-c13-10.3.1.13>15/01/19 14:58:34 INFO mapreduce.Job:  map 72% reduce 23%
+wc-YARN-c07-10.3.1.7>15/01/19 14:58:37 INFO mapreduce.Job:  map 71% reduce 22%
+wc-YARN-c13-10.3.1.13>15/01/19 14:58:36 INFO mapreduce.Job:  map 73% reduce 23%
+wc-YARN-c19-10.3.1.19>15/01/19 14:58:41 INFO mapreduce.Job:  map 69% reduce 23%
+wc-YARN-c19-10.3.1.19>15/01/19 14:58:42 INFO mapreduce.Job:  map 70% reduce 23%
+wc-YARN-c07-10.3.1.7>15/01/19 14:58:50 INFO mapreduce.Job:  map 71% reduce 23%
+wc-YARN-c13-10.3.1.13>15/01/19 14:58:58 INFO mapreduce.Job:  map 74% reduce 23%
+wc-YARN-c07-10.3.1.7>15/01/19 14:58:59 INFO mapreduce.Job:  map 72% reduce 23%
+wc-YARN-c19-10.3.1.19>15/01/19 14:59:05 INFO mapreduce.Job:  map 71% reduce 23%
+wc-YARN-c13-10.3.1.13>15/01/19 14:59:17 INFO mapreduce.Job:  map 75% reduce 23%
+wc-YARN-c07-10.3.1.7>15/01/19 14:59:19 INFO mapreduce.Job:  map 73% reduce 23%
+wc-YARN-c19-10.3.1.19>15/01/19 14:59:26 INFO mapreduce.Job:  map 72% reduce 23%
+wc-YARN-c13-10.3.1.13>15/01/19 14:59:27 INFO mapreduce.Job:  map 75% reduce 24%
+wc-YARN-c19-10.3.1.19>15/01/19 14:59:33 INFO mapreduce.Job:  map 72% reduce 24%
+wc-YARN-c13-10.3.1.13>15/01/19 14:59:38 INFO mapreduce.Job:  map 76% reduce 24%
+wc-YARN-c07-10.3.1.7>15/01/19 14:59:42 INFO mapreduce.Job:  map 74% reduce 23%
+wc-YARN-c07-10.3.1.7>15/01/19 14:59:43 INFO mapreduce.Job:  map 74% reduce 24%
+wc-YARN-c19-10.3.1.19>15/01/19 14:59:48 INFO mapreduce.Job:  map 73% reduce 24%
+wc-YARN-c13-10.3.1.13>15/01/19 14:59:57 INFO mapreduce.Job:  map 77% reduce 24%
+wc-YARN-c07-10.3.1.7>15/01/19 15:00:03 INFO mapreduce.Job:  map 75% reduce 24%
+wc-YARN-c19-10.3.1.19>15/01/19 15:00:12 INFO mapreduce.Job:  map 74% reduce 24%
+wc-YARN-c13-10.3.1.13>15/01/19 15:00:18 INFO mapreduce.Job:  map 78% reduce 24%
+wc-YARN-c13-10.3.1.13>15/01/19 15:00:19 INFO mapreduce.Job:  map 78% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:00:24 INFO mapreduce.Job:  map 76% reduce 24%
+wc-YARN-c19-10.3.1.19>15/01/19 15:00:32 INFO mapreduce.Job:  map 74% reduce 25%
+wc-YARN-c19-10.3.1.19>15/01/19 15:00:33 INFO mapreduce.Job:  map 75% reduce 25%
+wc-YARN-c13-10.3.1.13>15/01/19 15:00:37 INFO mapreduce.Job:  map 79% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:00:38 INFO mapreduce.Job:  map 76% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:00:44 INFO mapreduce.Job:  map 77% reduce 25%
+wc-YARN-c19-10.3.1.19>15/01/19 15:00:53 INFO mapreduce.Job:  map 76% reduce 25%
+wc-YARN-c13-10.3.1.13>15/01/19 15:00:59 INFO mapreduce.Job:  map 80% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:01:03 INFO mapreduce.Job:  map 78% reduce 25%
+wc-YARN-c13-10.3.1.13>15/01/19 15:01:10 INFO mapreduce.Job:  map 80% reduce 26%
+wc-YARN-c19-10.3.1.19>15/01/19 15:01:16 INFO mapreduce.Job:  map 77% reduce 25%
+wc-YARN-c13-10.3.1.13>15/01/19 15:01:20 INFO mapreduce.Job:  map 81% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:01:23 INFO mapreduce.Job:  map 79% reduce 25%
+wc-YARN-c19-10.3.1.19>15/01/19 15:01:29 INFO mapreduce.Job:  map 77% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:01:34 INFO mapreduce.Job:  map 79% reduce 26%
+wc-YARN-c19-10.3.1.19>15/01/19 15:01:38 INFO mapreduce.Job:  map 78% reduce 26%
+wc-YARN-c13-10.3.1.13>15/01/19 15:01:40 INFO mapreduce.Job:  map 82% reduce 26%
+wc-YARN-c13-10.3.1.13>15/01/19 15:01:42 INFO mapreduce.Job: Task Id : attempt_1421649106647_0001_r_000005_0, Status : FAILED
+wc-YARN-c13-10.3.1.13>Error: org.apache.hadoop.mapreduce.task.reduce.Shuffle$ShuffleError: error in shuffle in fetcher#4
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Shuffle.run(Shuffle.java:134)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:376)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:167)
+wc-YARN-c13-10.3.1.13>	at java.security.AccessController.doPrivileged(Native Method)
+wc-YARN-c13-10.3.1.13>	at javax.security.auth.Subject.doAs(Subject.java:422)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1556)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+wc-YARN-c13-10.3.1.13>Caused by: java.lang.OutOfMemoryError: Java heap space
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:56)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:46)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput.<init>(InMemoryMapOutput.java:63)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.unconditionalReserve(MergeManagerImpl.java:297)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.reserve(MergeManagerImpl.java:287)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyMapOutput(Fetcher.java:411)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Fetcher.java:341)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.run(Fetcher.java:165)
+wc-YARN-c13-10.3.1.13>
+wc-YARN-c13-10.3.1.13>15/01/19 15:01:43 INFO mapreduce.Job:  map 82% reduce 22%
+wc-YARN-c07-10.3.1.7>15/01/19 15:01:45 INFO mapreduce.Job:  map 80% reduce 26%
+wc-YARN-c19-10.3.1.19>15/01/19 15:02:01 INFO mapreduce.Job:  map 79% reduce 26%
+wc-YARN-c13-10.3.1.13>15/01/19 15:02:00 INFO mapreduce.Job:  map 83% reduce 22%
+wc-YARN-c07-10.3.1.7>15/01/19 15:02:07 INFO mapreduce.Job:  map 81% reduce 26%
+wc-YARN-c13-10.3.1.13>15/01/19 15:02:10 INFO mapreduce.Job:  map 83% reduce 23%
+wc-YARN-c13-10.3.1.13>15/01/19 15:02:19 INFO mapreduce.Job:  map 84% reduce 23%
+wc-YARN-c19-10.3.1.19>15/01/19 15:02:23 INFO mapreduce.Job:  map 80% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:02:27 INFO mapreduce.Job:  map 81% reduce 27%
+wc-YARN-c07-10.3.1.7>15/01/19 15:02:28 INFO mapreduce.Job:  map 82% reduce 27%
+wc-YARN-c19-10.3.1.19>15/01/19 15:02:33 INFO mapreduce.Job:  map 80% reduce 27%
+wc-YARN-c13-10.3.1.13>15/01/19 15:02:40 INFO mapreduce.Job:  map 85% reduce 23%
+wc-YARN-c19-10.3.1.19>15/01/19 15:02:41 INFO mapreduce.Job:  map 81% reduce 27%
+wc-YARN-c07-10.3.1.7>15/01/19 15:02:47 INFO mapreduce.Job:  map 83% reduce 27%
+wc-YARN-c13-10.3.1.13>15/01/19 15:02:57 INFO mapreduce.Job:  map 86% reduce 23%
+wc-YARN-c13-10.3.1.13>15/01/19 15:02:59 INFO mapreduce.Job:  map 86% reduce 24%
+wc-YARN-c07-10.3.1.7>15/01/19 15:03:07 INFO mapreduce.Job:  map 84% reduce 27%
+wc-YARN-c19-10.3.1.19>15/01/19 15:03:09 INFO mapreduce.Job:  map 82% reduce 27%
+wc-YARN-c13-10.3.1.13>15/01/19 15:03:18 INFO mapreduce.Job:  map 87% reduce 24%
+wc-YARN-c19-10.3.1.19>15/01/19 15:03:28 INFO mapreduce.Job:  map 83% reduce 27%
+wc-YARN-c07-10.3.1.7>15/01/19 15:03:27 INFO mapreduce.Job:  map 85% reduce 27%
+wc-YARN-c07-10.3.1.7>15/01/19 15:03:29 INFO mapreduce.Job:  map 85% reduce 28%
+wc-YARN-c13-10.3.1.13>15/01/19 15:03:35 INFO mapreduce.Job:  map 88% reduce 24%
+wc-YARN-c07-10.3.1.7>15/01/19 15:03:44 INFO mapreduce.Job:  map 86% reduce 28%
+wc-YARN-c13-10.3.1.13>15/01/19 15:03:44 INFO mapreduce.Job:  map 88% reduce 25%
+wc-YARN-c13-10.3.1.13>15/01/19 15:03:53 INFO mapreduce.Job:  map 89% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:04:03 INFO mapreduce.Job:  map 87% reduce 28%
+wc-YARN-c13-10.3.1.13>15/01/19 15:04:08 INFO mapreduce.Job:  map 90% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:04:21 INFO mapreduce.Job:  map 88% reduce 28%
+wc-YARN-c13-10.3.1.13>15/01/19 15:04:26 INFO mapreduce.Job:  map 91% reduce 25%
+wc-YARN-c07-10.3.1.7>15/01/19 15:04:30 INFO mapreduce.Job:  map 88% reduce 29%
+wc-YARN-c13-10.3.1.13>15/01/19 15:04:35 INFO mapreduce.Job:  map 91% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:04:39 INFO mapreduce.Job:  map 89% reduce 29%
+wc-YARN-c13-10.3.1.13>15/01/19 15:04:42 INFO mapreduce.Job:  map 92% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:04:55 INFO mapreduce.Job:  map 90% reduce 29%
+wc-YARN-c13-10.3.1.13>15/01/19 15:04:57 INFO mapreduce.Job:  map 93% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:05:12 INFO mapreduce.Job:  map 91% reduce 29%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:12 INFO mapreduce.Job:  map 94% reduce 26%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:20 INFO mapreduce.Job:  map 94% reduce 27%
+wc-YARN-c19-10.3.1.19>15/01/19 15:05:23 INFO mapreduce.Job:  map 88% reduce 29%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:26 INFO mapreduce.Job:  map 95% reduce 27%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:26 INFO mapreduce.Job: Task Id : attempt_1421649106647_0001_r_000005_1, Status : FAILED
+wc-YARN-c13-10.3.1.13>Error: org.apache.hadoop.mapreduce.task.reduce.Shuffle$ShuffleError: error in shuffle in fetcher#4
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Shuffle.run(Shuffle.java:134)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapred.ReduceTask.run(ReduceTask.java:376)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapred.YarnChild$2.run(YarnChild.java:167)
+wc-YARN-c13-10.3.1.13>	at java.security.AccessController.doPrivileged(Native Method)
+wc-YARN-c13-10.3.1.13>	at javax.security.auth.Subject.doAs(Subject.java:422)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1556)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapred.YarnChild.main(YarnChild.java:162)
+wc-YARN-c13-10.3.1.13>Caused by: java.lang.OutOfMemoryError: Java heap space
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:56)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.io.BoundedByteArrayOutputStream.<init>(BoundedByteArrayOutputStream.java:46)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.InMemoryMapOutput.<init>(InMemoryMapOutput.java:63)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.unconditionalReserve(MergeManagerImpl.java:297)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.MergeManagerImpl.reserve(MergeManagerImpl.java:287)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyMapOutput(Fetcher.java:411)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.copyFromHost(Fetcher.java:341)
+wc-YARN-c13-10.3.1.13>	at org.apache.hadoop.mapreduce.task.reduce.Fetcher.run(Fetcher.java:165)
+wc-YARN-c13-10.3.1.13>
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:27 INFO mapreduce.Job:  map 95% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:05:29 INFO mapreduce.Job:  map 92% reduce 29%
+wc-YARN-c07-10.3.1.7>15/01/19 15:05:33 INFO mapreduce.Job:  map 92% reduce 30%
+wc-YARN-c19-10.3.1.19>15/01/19 15:05:34 INFO mapreduce.Job:  map 89% reduce 29%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:38 INFO mapreduce.Job:  map 96% reduce 26%
+wc-YARN-c07-10.3.1.7>15/01/19 15:05:45 INFO mapreduce.Job:  map 93% reduce 30%
+wc-YARN-c19-10.3.1.19>15/01/19 15:05:49 INFO mapreduce.Job:  map 89% reduce 30%
+wc-YARN-c19-10.3.1.19>15/01/19 15:05:50 INFO mapreduce.Job:  map 90% reduce 30%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:51 INFO mapreduce.Job:  map 97% reduce 26%
+wc-YARN-c13-10.3.1.13>15/01/19 15:05:55 INFO mapreduce.Job:  map 97% reduce 27%
+wc-YARN-c07-10.3.1.7>15/01/19 15:05:59 INFO mapreduce.Job:  map 94% reduce 30%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:01 INFO mapreduce.Job:  map 98% reduce 27%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:09 INFO mapreduce.Job:  map 99% reduce 27%
+wc-YARN-c07-10.3.1.7>15/01/19 15:06:12 INFO mapreduce.Job:  map 95% reduce 30%
+wc-YARN-c19-10.3.1.19>15/01/19 15:06:15 INFO mapreduce.Job:  map 91% reduce 30%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:16 INFO mapreduce.Job:  map 100% reduce 27%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:19 INFO mapreduce.Job:  map 100% reduce 28%
+wc-YARN-c07-10.3.1.7>15/01/19 15:06:23 INFO mapreduce.Job:  map 96% reduce 31%
+wc-YARN-c19-10.3.1.19>15/01/19 15:06:31 INFO mapreduce.Job:  map 92% reduce 30%
+wc-YARN-c19-10.3.1.19>15/01/19 15:06:38 INFO mapreduce.Job:  map 92% reduce 31%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:37 INFO mapreduce.Job:  map 100% reduce 29%
+wc-YARN-c07-10.3.1.7>15/01/19 15:06:39 INFO mapreduce.Job:  map 97% reduce 31%
+wc-YARN-c19-10.3.1.19>15/01/19 15:06:46 INFO mapreduce.Job:  map 93% reduce 31%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:50 INFO mapreduce.Job:  map 100% reduce 30%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:56 INFO mapreduce.Job:  map 100% reduce 32%
+wc-YARN-c07-10.3.1.7>15/01/19 15:06:58 INFO mapreduce.Job:  map 98% reduce 31%
+wc-YARN-c13-10.3.1.13>15/01/19 15:06:59 INFO mapreduce.Job:  map 100% reduce 33%
+wc-YARN-c19-10.3.1.19>15/01/19 15:07:03 INFO mapreduce.Job:  map 94% reduce 31%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:02 INFO mapreduce.Job:  map 100% reduce 34%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:05 INFO mapreduce.Job:  map 100% reduce 35%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:14 INFO mapreduce.Job:  map 100% reduce 36%
+wc-YARN-c07-10.3.1.7>15/01/19 15:07:15 INFO mapreduce.Job:  map 99% reduce 31%
+wc-YARN-c07-10.3.1.7>15/01/19 15:07:17 INFO mapreduce.Job:  map 99% reduce 32%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:17 INFO mapreduce.Job:  map 100% reduce 37%
+wc-YARN-c19-10.3.1.19>15/01/19 15:07:22 INFO mapreduce.Job:  map 95% reduce 31%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:23 INFO mapreduce.Job:  map 100% reduce 38%
+wc-YARN-c19-10.3.1.19>15/01/19 15:07:25 INFO mapreduce.Job:  map 95% reduce 32%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:26 INFO mapreduce.Job:  map 100% reduce 39%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:29 INFO mapreduce.Job:  map 100% reduce 40%
+wc-YARN-c07-10.3.1.7>15/01/19 15:07:33 INFO mapreduce.Job:  map 100% reduce 32%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:35 INFO mapreduce.Job:  map 100% reduce 41%
+wc-YARN-c19-10.3.1.19>15/01/19 15:07:37 INFO mapreduce.Job:  map 96% reduce 32%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:41 INFO mapreduce.Job:  map 100% reduce 42%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:44 INFO mapreduce.Job:  map 100% reduce 43%
+wc-YARN-c19-10.3.1.19>15/01/19 15:07:51 INFO mapreduce.Job:  map 97% reduce 32%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:53 INFO mapreduce.Job:  map 100% reduce 44%
+wc-YARN-c07-10.3.1.7>15/01/19 15:07:58 INFO mapreduce.Job:  map 100% reduce 33%
+wc-YARN-c13-10.3.1.13>15/01/19 15:07:59 INFO mapreduce.Job:  map 100% reduce 45%
+wc-YARN-c19-10.3.1.19>15/01/19 15:08:02 INFO mapreduce.Job:  map 98% reduce 32%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:04 INFO mapreduce.Job:  map 100% reduce 34%
+wc-YARN-c13-10.3.1.13>15/01/19 15:08:07 INFO mapreduce.Job:  map 100% reduce 46%
+wc-YARN-c19-10.3.1.19>15/01/19 15:08:09 INFO mapreduce.Job:  map 98% reduce 33%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:10 INFO mapreduce.Job:  map 100% reduce 35%
+wc-YARN-c19-10.3.1.19>15/01/19 15:08:12 INFO mapreduce.Job:  map 99% reduce 33%
+wc-YARN-c19-10.3.1.19>15/01/19 15:08:20 INFO mapreduce.Job:  map 100% reduce 33%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:19 INFO mapreduce.Job:  map 100% reduce 36%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:27 INFO mapreduce.Job:  map 100% reduce 37%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:33 INFO mapreduce.Job:  map 100% reduce 38%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:36 INFO mapreduce.Job:  map 100% reduce 39%
+wc-YARN-c13-10.3.1.13>15/01/19 15:08:38 INFO mapreduce.Job:  map 100% reduce 47%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:40 INFO mapreduce.Job:  map 100% reduce 40%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:43 INFO mapreduce.Job:  map 100% reduce 41%
+wc-YARN-c07-10.3.1.7>15/01/19 15:08:57 INFO mapreduce.Job:  map 100% reduce 42%
+wc-YARN-c19-10.3.1.19>15/01/19 15:08:58 INFO mapreduce.Job:  map 100% reduce 39%
+wc-YARN-c07-10.3.1.7>15/01/19 15:09:09 INFO mapreduce.Job:  map 100% reduce 43%
+wc-YARN-c07-10.3.1.7>15/01/19 15:09:18 INFO mapreduce.Job:  map 100% reduce 44%
+wc-YARN-c13-10.3.1.13>15/01/19 15:09:35 INFO mapreduce.Job:  map 100% reduce 48%
+wc-YARN-c07-10.3.1.7>15/01/19 15:09:36 INFO mapreduce.Job:  map 100% reduce 45%
+wc-YARN-c19-10.3.1.19>15/01/19 15:09:41 INFO mapreduce.Job:  map 100% reduce 45%
+wc-YARN-c13-10.3.1.13>15/01/19 15:10:32 INFO mapreduce.Job:  map 100% reduce 49%
+wc-YARN-c07-10.3.1.7>15/01/19 15:10:40 INFO mapreduce.Job:  map 100% reduce 46%
+wc-YARN-c07-10.3.1.7>15/01/19 15:11:07 INFO mapreduce.Job:  map 100% reduce 47%
+wc-YARN-c07-10.3.1.7>15/01/19 15:11:28 INFO mapreduce.Job:  map 100% reduce 48%
+wc-YARN-c13-10.3.1.13>15/01/19 15:11:33 INFO mapreduce.Job:  map 100% reduce 50%
+wc-YARN-c07-10.3.1.7>15/01/19 15:11:52 INFO mapreduce.Job:  map 100% reduce 49%
+wc-YARN-c19-10.3.1.19>15/01/19 15:11:56 INFO mapreduce.Job:  map 100% reduce 46%
+wc-YARN-c13-10.3.1.13>15/01/19 15:12:01 INFO mapreduce.Job:  map 100% reduce 51%
+wc-YARN-c07-10.3.1.7>15/01/19 15:12:13 INFO mapreduce.Job:  map 100% reduce 50%
+wc-YARN-c19-10.3.1.19>15/01/19 15:12:19 INFO mapreduce.Job:  map 100% reduce 47%
+wc-YARN-c13-10.3.1.13>15/01/19 15:12:25 INFO mapreduce.Job:  map 100% reduce 52%
+wc-YARN-c07-10.3.1.7>15/01/19 15:12:31 INFO mapreduce.Job:  map 100% reduce 51%
+wc-YARN-c19-10.3.1.19>15/01/19 15:12:32 INFO mapreduce.Job:  map 100% reduce 48%
+wc-YARN-c13-10.3.1.13>15/01/19 15:12:48 INFO mapreduce.Job:  map 100% reduce 53%
+wc-YARN-c19-10.3.1.19>15/01/19 15:12:57 INFO mapreduce.Job:  map 100% reduce 49%
+wc-YARN-c19-10.3.1.19>15/01/19 15:13:16 INFO mapreduce.Job:  map 100% reduce 50%
+wc-YARN-c13-10.3.1.13>15/01/19 15:13:15 INFO mapreduce.Job:  map 100% reduce 54%
+wc-YARN-c19-10.3.1.19>15/01/19 15:13:27 INFO mapreduce.Job:  map 100% reduce 51%
+wc-YARN-c13-10.3.1.13>15/01/19 15:13:33 INFO mapreduce.Job:  map 100% reduce 55%
+wc-YARN-c13-10.3.1.13>15/01/19 15:13:47 INFO mapreduce.Job:  map 100% reduce 56%
+wc-YARN-c19-10.3.1.19>15/01/19 15:13:54 INFO mapreduce.Job:  map 100% reduce 52%
+wc-YARN-c13-10.3.1.13>15/01/19 15:14:05 INFO mapreduce.Job:  map 100% reduce 57%
+wc-YARN-c19-10.3.1.19>15/01/19 15:14:12 INFO mapreduce.Job:  map 100% reduce 53%
+wc-YARN-c19-10.3.1.19>15/01/19 15:14:19 INFO mapreduce.Job:  map 100% reduce 54%
+wc-YARN-c07-10.3.1.7>15/01/19 15:14:25 INFO mapreduce.Job:  map 100% reduce 52%
+wc-YARN-c13-10.3.1.13>15/01/19 15:14:29 INFO mapreduce.Job:  map 100% reduce 58%
+wc-YARN-c19-10.3.1.19>15/01/19 15:14:41 INFO mapreduce.Job:  map 100% reduce 55%
+wc-YARN-c13-10.3.1.13>15/01/19 15:14:47 INFO mapreduce.Job:  map 100% reduce 59%
+wc-YARN-c19-10.3.1.19>15/01/19 15:14:58 INFO mapreduce.Job:  map 100% reduce 56%
+wc-YARN-c13-10.3.1.13>15/01/19 15:15:05 INFO mapreduce.Job:  map 100% reduce 60%
+wc-YARN-c19-10.3.1.19>15/01/19 15:15:15 INFO mapreduce.Job:  map 100% reduce 57%
+wc-YARN-c13-10.3.1.13>15/01/19 15:15:25 INFO mapreduce.Job:  map 100% reduce 61%
+wc-YARN-c19-10.3.1.19>15/01/19 15:15:28 INFO mapreduce.Job:  map 100% reduce 58%
+wc-YARN-c19-10.3.1.19>15/01/19 15:15:37 INFO mapreduce.Job:  map 100% reduce 59%
+wc-YARN-c13-10.3.1.13>15/01/19 15:15:48 INFO mapreduce.Job:  map 100% reduce 62%
+wc-YARN-c19-10.3.1.19>15/01/19 15:15:57 INFO mapreduce.Job:  map 100% reduce 60%
+wc-YARN-c13-10.3.1.13>15/01/19 15:16:15 INFO mapreduce.Job:  map 100% reduce 63%
+wc-YARN-c19-10.3.1.19>15/01/19 15:16:20 INFO mapreduce.Job:  map 100% reduce 61%
+wc-YARN-c13-10.3.1.13>15/01/19 15:16:33 INFO mapreduce.Job:  map 100% reduce 64%
+wc-YARN-c19-10.3.1.19>15/01/19 15:16:41 INFO mapreduce.Job:  map 100% reduce 62%
+wc-YARN-c19-10.3.1.19>15/01/19 15:17:07 INFO mapreduce.Job:  map 100% reduce 63%
+wc-YARN-c19-10.3.1.19>15/01/19 15:17:35 INFO mapreduce.Job:  map 100% reduce 64%
+wc-YARN-c13-10.3.1.13>15/01/19 15:17:38 INFO mapreduce.Job:  map 100% reduce 65%
+wc-YARN-c07-10.3.1.7>15/01/19 15:17:47 INFO mapreduce.Job:  map 100% reduce 53%
+wc-YARN-c19-10.3.1.19>15/01/19 15:17:58 INFO mapreduce.Job:  map 100% reduce 65%
+wc-YARN-c13-10.3.1.13>15/01/19 15:18:04 INFO mapreduce.Job:  map 100% reduce 66%
+wc-YARN-c19-10.3.1.19>15/01/19 15:18:25 INFO mapreduce.Job:  map 100% reduce 66%
+wc-YARN-c13-10.3.1.13>15/01/19 15:18:31 INFO mapreduce.Job:  map 100% reduce 67%
+wc-YARN-c13-10.3.1.13>15/01/19 15:18:43 INFO mapreduce.Job:  map 100% reduce 68%
+wc-YARN-c19-10.3.1.19>15/01/19 15:18:59 INFO mapreduce.Job:  map 100% reduce 67%
+wc-YARN-c13-10.3.1.13>15/01/19 15:18:59 INFO mapreduce.Job:  map 100% reduce 69%
+wc-YARN-c13-10.3.1.13>15/01/19 15:19:16 INFO mapreduce.Job:  map 100% reduce 70%
+wc-YARN-c19-10.3.1.19>15/01/19 15:19:21 INFO mapreduce.Job:  map 100% reduce 68%
+wc-YARN-c13-10.3.1.13>15/01/19 15:19:28 INFO mapreduce.Job:  map 100% reduce 71%
+wc-YARN-c19-10.3.1.19>15/01/19 15:19:42 INFO mapreduce.Job:  map 100% reduce 69%
+wc-YARN-c07-10.3.1.7>15/01/19 15:20:07 INFO mapreduce.Job:  map 100% reduce 54%
+wc-YARN-c13-10.3.1.13>15/01/19 15:20:16 INFO mapreduce.Job:  map 100% reduce 72%
+wc-YARN-c19-10.3.1.19>15/01/19 15:20:19 INFO mapreduce.Job:  map 100% reduce 70%
+wc-YARN-c07-10.3.1.7>15/01/19 15:21:06 INFO mapreduce.Job:  map 100% reduce 55%
+wc-YARN-c19-10.3.1.19>15/01/19 15:21:14 INFO mapreduce.Job:  map 100% reduce 71%
+wc-YARN-c13-10.3.1.13>15/01/19 15:21:49 INFO mapreduce.Job:  map 100% reduce 73%
+wc-YARN-c07-10.3.1.7>15/01/19 15:22:14 INFO mapreduce.Job:  map 100% reduce 56%
+wc-YARN-c19-10.3.1.19>15/01/19 15:22:48 INFO mapreduce.Job:  map 100% reduce 72%
+wc-YARN-c07-10.3.1.7>15/01/19 15:22:53 INFO mapreduce.Job:  map 100% reduce 57%
+wc-YARN-c07-10.3.1.7>15/01/19 15:23:19 INFO mapreduce.Job:  map 100% reduce 58%
+wc-YARN-c13-10.3.1.13>15/01/19 15:23:27 INFO mapreduce.Job:  map 100% reduce 74%
+wc-YARN-c07-10.3.1.7>15/01/19 15:23:43 INFO mapreduce.Job:  map 100% reduce 59%
+wc-YARN-c07-10.3.1.7>15/01/19 15:24:11 INFO mapreduce.Job:  map 100% reduce 60%
+wc-YARN-c19-10.3.1.19>15/01/19 15:24:27 INFO mapreduce.Job:  map 100% reduce 73%
+wc-YARN-c07-10.3.1.7>15/01/19 15:24:40 INFO mapreduce.Job:  map 100% reduce 61%
+wc-YARN-c07-10.3.1.7>15/01/19 15:25:10 INFO mapreduce.Job:  map 100% reduce 62%
+wc-YARN-c13-10.3.1.13>15/01/19 15:25:12 INFO mapreduce.Job:  map 100% reduce 75%
+wc-YARN-c07-10.3.1.7>15/01/19 15:25:40 INFO mapreduce.Job:  map 100% reduce 63%
+wc-YARN-c19-10.3.1.19>15/01/19 15:26:08 INFO mapreduce.Job:  map 100% reduce 74%
+wc-YARN-c07-10.3.1.7>15/01/19 15:26:14 INFO mapreduce.Job:  map 100% reduce 64%
+wc-YARN-c07-10.3.1.7>15/01/19 15:26:45 INFO mapreduce.Job:  map 100% reduce 65%
+wc-YARN-c13-10.3.1.13>15/01/19 15:26:56 INFO mapreduce.Job:  map 100% reduce 76%
+wc-YARN-c07-10.3.1.7>15/01/19 15:27:19 INFO mapreduce.Job:  map 100% reduce 66%
+wc-YARN-c07-10.3.1.7>15/01/19 15:27:49 INFO mapreduce.Job:  map 100% reduce 67%
+wc-YARN-c19-10.3.1.19>15/01/19 15:27:57 INFO mapreduce.Job:  map 100% reduce 75%
+wc-YARN-c07-10.3.1.7>15/01/19 15:28:21 INFO mapreduce.Job:  map 100% reduce 68%
+wc-YARN-c13-10.3.1.13>15/01/19 15:28:33 INFO mapreduce.Job:  map 100% reduce 77%
+wc-YARN-c07-10.3.1.7>15/01/19 15:28:52 INFO mapreduce.Job:  map 100% reduce 69%
+wc-YARN-c07-10.3.1.7>15/01/19 15:29:19 INFO mapreduce.Job:  map 100% reduce 70%
+wc-YARN-c19-10.3.1.19>15/01/19 15:29:31 INFO mapreduce.Job:  map 100% reduce 76%
+wc-YARN-c07-10.3.1.7>15/01/19 15:29:49 INFO mapreduce.Job:  map 100% reduce 71%
+wc-YARN-c13-10.3.1.13>15/01/19 15:29:57 INFO mapreduce.Job:  map 100% reduce 78%
+wc-YARN-c07-10.3.1.7>15/01/19 15:30:13 INFO mapreduce.Job:  map 100% reduce 72%
+wc-YARN-c07-10.3.1.7>15/01/19 15:30:40 INFO mapreduce.Job:  map 100% reduce 73%
+wc-YARN-c19-10.3.1.19>15/01/19 15:31:08 INFO mapreduce.Job:  map 100% reduce 77%
+wc-YARN-c13-10.3.1.13>15/01/19 15:31:15 INFO mapreduce.Job:  map 100% reduce 79%
+wc-YARN-c07-10.3.1.7>15/01/19 15:31:24 INFO mapreduce.Job:  map 100% reduce 74%
+wc-YARN-c19-10.3.1.19>15/01/19 15:32:29 INFO mapreduce.Job:  map 100% reduce 78%
+wc-YARN-c13-10.3.1.13>15/01/19 15:32:32 INFO mapreduce.Job:  map 100% reduce 80%
+wc-YARN-c07-10.3.1.7>15/01/19 15:32:39 INFO mapreduce.Job:  map 100% reduce 75%
+wc-YARN-c07-10.3.1.7>15/01/19 15:33:47 INFO mapreduce.Job:  map 100% reduce 76%
+wc-YARN-c19-10.3.1.19>15/01/19 15:33:51 INFO mapreduce.Job:  map 100% reduce 79%
+wc-YARN-c13-10.3.1.13>15/01/19 15:33:55 INFO mapreduce.Job:  map 100% reduce 81%
+wc-YARN-c07-10.3.1.7>15/01/19 15:35:03 INFO mapreduce.Job:  map 100% reduce 77%
+wc-YARN-c19-10.3.1.19>15/01/19 15:35:21 INFO mapreduce.Job:  map 100% reduce 80%
+wc-YARN-c13-10.3.1.13>15/01/19 15:35:38 INFO mapreduce.Job:  map 100% reduce 82%
+wc-YARN-c07-10.3.1.7>15/01/19 15:36:36 INFO mapreduce.Job:  map 100% reduce 78%
+wc-YARN-c19-10.3.1.19>15/01/19 15:36:56 INFO mapreduce.Job:  map 100% reduce 81%
+wc-YARN-c13-10.3.1.13>15/01/19 15:37:21 INFO mapreduce.Job:  map 100% reduce 83%
+wc-YARN-c07-10.3.1.7>15/01/19 15:38:27 INFO mapreduce.Job:  map 100% reduce 79%
+wc-YARN-c19-10.3.1.19>15/01/19 15:38:31 INFO mapreduce.Job:  map 100% reduce 82%
+wc-YARN-c13-10.3.1.13>15/01/19 15:38:52 INFO mapreduce.Job:  map 100% reduce 84%
+wc-YARN-c19-10.3.1.19>15/01/19 15:39:58 INFO mapreduce.Job:  map 100% reduce 83%
+wc-YARN-c13-10.3.1.13>15/01/19 15:40:15 INFO mapreduce.Job:  map 100% reduce 85%
+wc-YARN-c07-10.3.1.7>15/01/19 15:40:19 INFO mapreduce.Job:  map 100% reduce 80%
+wc-YARN-c19-10.3.1.19>15/01/19 15:41:11 INFO mapreduce.Job:  map 100% reduce 84%
+wc-YARN-c13-10.3.1.13>15/01/19 15:41:22 INFO mapreduce.Job:  map 100% reduce 86%
+wc-YARN-c07-10.3.1.7>15/01/19 15:41:46 INFO mapreduce.Job:  map 100% reduce 81%
+wc-YARN-c19-10.3.1.19>15/01/19 15:42:14 INFO mapreduce.Job:  map 100% reduce 85%
+wc-YARN-c13-10.3.1.13>15/01/19 15:42:28 INFO mapreduce.Job:  map 100% reduce 87%
+wc-YARN-c07-10.3.1.7>15/01/19 15:43:20 INFO mapreduce.Job:  map 100% reduce 82%
+wc-YARN-c19-10.3.1.19>15/01/19 15:43:21 INFO mapreduce.Job:  map 100% reduce 86%
+wc-YARN-c13-10.3.1.13>15/01/19 15:43:30 INFO mapreduce.Job:  map 100% reduce 88%
+wc-YARN-c19-10.3.1.19>15/01/19 15:44:28 INFO mapreduce.Job:  map 100% reduce 87%
+wc-YARN-c13-10.3.1.13>15/01/19 15:44:39 INFO mapreduce.Job:  map 100% reduce 89%
+wc-YARN-c07-10.3.1.7>15/01/19 15:44:50 INFO mapreduce.Job:  map 100% reduce 83%
+wc-YARN-c19-10.3.1.19>15/01/19 15:45:43 INFO mapreduce.Job:  map 100% reduce 88%
+wc-YARN-c13-10.3.1.13>15/01/19 15:46:00 INFO mapreduce.Job:  map 100% reduce 90%
+wc-YARN-c07-10.3.1.7>15/01/19 15:46:10 INFO mapreduce.Job:  map 100% reduce 84%
+wc-YARN-c19-10.3.1.19>15/01/19 15:47:10 INFO mapreduce.Job:  map 100% reduce 89%
+wc-YARN-c13-10.3.1.13>15/01/19 15:47:25 INFO mapreduce.Job:  map 100% reduce 91%
+wc-YARN-c07-10.3.1.7>15/01/19 15:47:43 INFO mapreduce.Job:  map 100% reduce 85%
+wc-YARN-c19-10.3.1.19>15/01/19 15:48:37 INFO mapreduce.Job:  map 100% reduce 90%
+wc-YARN-c13-10.3.1.13>15/01/19 15:48:46 INFO mapreduce.Job:  map 100% reduce 92%
+wc-YARN-c07-10.3.1.7>15/01/19 15:49:04 INFO mapreduce.Job:  map 100% reduce 86%
+wc-YARN-c19-10.3.1.19>15/01/19 15:49:56 INFO mapreduce.Job:  map 100% reduce 91%
+wc-YARN-c13-10.3.1.13>15/01/19 15:50:05 INFO mapreduce.Job:  map 100% reduce 93%
+wc-YARN-c07-10.3.1.7>15/01/19 15:50:29 INFO mapreduce.Job:  map 100% reduce 87%
+wc-YARN-c19-10.3.1.19>15/01/19 15:51:13 INFO mapreduce.Job:  map 100% reduce 92%
+wc-YARN-c13-10.3.1.13>15/01/19 15:51:24 INFO mapreduce.Job:  map 100% reduce 94%
+wc-YARN-c07-10.3.1.7>15/01/19 15:51:56 INFO mapreduce.Job:  map 100% reduce 88%
+wc-YARN-c19-10.3.1.19>15/01/19 15:52:16 INFO mapreduce.Job:  map 100% reduce 93%
+wc-YARN-c13-10.3.1.13>15/01/19 15:52:49 INFO mapreduce.Job:  map 100% reduce 95%
+wc-YARN-c07-10.3.1.7>15/01/19 15:53:20 INFO mapreduce.Job:  map 100% reduce 89%
+wc-YARN-c19-10.3.1.19>15/01/19 15:53:41 INFO mapreduce.Job:  map 100% reduce 94%
+wc-YARN-c13-10.3.1.13>15/01/19 15:54:41 INFO mapreduce.Job:  map 100% reduce 96%
+wc-YARN-c19-10.3.1.19>15/01/19 15:54:58 INFO mapreduce.Job:  map 100% reduce 95%
+wc-YARN-c07-10.3.1.7>15/01/19 15:55:03 INFO mapreduce.Job:  map 100% reduce 90%
+wc-YARN-c19-10.3.1.19>15/01/19 15:56:45 INFO mapreduce.Job:  map 100% reduce 96%
+wc-YARN-c13-10.3.1.13>15/01/19 15:57:03 INFO mapreduce.Job:  map 100% reduce 97%
+wc-YARN-c07-10.3.1.7>15/01/19 15:57:33 INFO mapreduce.Job:  map 100% reduce 91%
+wc-YARN-c19-10.3.1.19>15/01/19 15:58:38 INFO mapreduce.Job:  map 100% reduce 97%
+wc-YARN-c13-10.3.1.13>15/01/19 15:59:29 INFO mapreduce.Job:  map 100% reduce 98%
+wc-YARN-c07-10.3.1.7>15/01/19 15:59:52 INFO mapreduce.Job:  map 100% reduce 92%
+wc-YARN-c19-10.3.1.19>15/01/19 16:00:24 INFO mapreduce.Job:  map 100% reduce 98%
+wc-YARN-c13-10.3.1.13>15/01/19 16:01:54 INFO mapreduce.Job:  map 100% reduce 99%
+wc-YARN-c19-10.3.1.19>15/01/19 16:02:05 INFO mapreduce.Job:  map 100% reduce 99%
+wc-YARN-c07-10.3.1.7>15/01/19 16:02:37 INFO mapreduce.Job:  map 100% reduce 93%
+wc-YARN-c19-10.3.1.19>15/01/19 16:03:57 INFO mapreduce.Job:  map 100% reduce 100%
+wc-YARN-c13-10.3.1.13>15/01/19 16:04:34 INFO mapreduce.Job:  map 100% reduce 100%
+wc-YARN-c19-10.3.1.19>15/01/19 16:06:00 INFO mapreduce.Job: Job job_1421649102131_0001 completed successfully
+wc-YARN-c19-10.3.1.19>15/01/19 16:06:01 INFO mapreduce.Job: Counters: 51
+wc-YARN-c19-10.3.1.19>	File System Counters
+wc-YARN-c19-10.3.1.19>		FILE: Number of bytes read=524731641731
+wc-YARN-c19-10.3.1.19>		FILE: Number of bytes written=663505663186
+wc-YARN-c19-10.3.1.19>		FILE: Number of read operations=0
+wc-YARN-c19-10.3.1.19>		FILE: Number of large read operations=0
+wc-YARN-c19-10.3.1.19>		FILE: Number of write operations=0
+wc-YARN-c19-10.3.1.19>		HDFS: Number of bytes read=340326496771
+wc-YARN-c19-10.3.1.19>		HDFS: Number of bytes written=100604155601
+wc-YARN-c19-10.3.1.19>		HDFS: Number of read operations=8220
+wc-YARN-c19-10.3.1.19>		HDFS: Number of large read operations=0
+wc-YARN-c19-10.3.1.19>		HDFS: Number of write operations=12
+wc-YARN-c19-10.3.1.19>	Job Counters 
+wc-YARN-c19-10.3.1.19>		Failed reduce tasks=3
+wc-YARN-c19-10.3.1.19>		Launched map tasks=2734
+wc-YARN-c19-10.3.1.19>		Launched reduce tasks=9
+wc-YARN-c19-10.3.1.19>		Data-local map tasks=2732
+wc-YARN-c19-10.3.1.19>		Rack-local map tasks=4
+wc-YARN-c19-10.3.1.19>		Total time spent by all maps in occupied slots (ms)=77934017
+wc-YARN-c19-10.3.1.19>		Total time spent by all reduces in occupied slots (ms)=30185650
+wc-YARN-c19-10.3.1.19>		Total time spent by all map tasks (ms)=77934017
+wc-YARN-c19-10.3.1.19>		Total time spent by all reduce tasks (ms)=30185650
+wc-YARN-c19-10.3.1.19>		Total vcore-seconds taken by all map tasks=77934017
+wc-YARN-c19-10.3.1.19>		Total vcore-seconds taken by all reduce tasks=30185650
+wc-YARN-c19-10.3.1.19>		Total megabyte-seconds taken by all map tasks=79804433408
+wc-YARN-c19-10.3.1.19>		Total megabyte-seconds taken by all reduce tasks=30910105600
+wc-YARN-c19-10.3.1.19>	Map-Reduce Framework
+wc-YARN-c19-10.3.1.19>		Map input records=5742140987
+wc-YARN-c19-10.3.1.19>		Map output records=19065173479
+wc-YARN-c19-10.3.1.19>		Map output bytes=412962168215
+wc-YARN-c19-10.3.1.19>		Map output materialized bytes=138620026272
+wc-YARN-c19-10.3.1.19>		Input split bytes=380192
+wc-YARN-c19-10.3.1.19>		Combine input records=21618522243
+wc-YARN-c19-10.3.1.19>		Combine output records=4926719039
+wc-YARN-c19-10.3.1.19>		Reduce input groups=1114319967
+wc-YARN-c19-10.3.1.19>		Reduce shuffle bytes=138620026272
+wc-YARN-c19-10.3.1.19>		Reduce input records=2373370275
+wc-YARN-c19-10.3.1.19>		Reduce output records=1114470677
+wc-YARN-c19-10.3.1.19>		Spilled Records=11424485640
+wc-YARN-c19-10.3.1.19>		Shuffled Maps =16404
+wc-YARN-c19-10.3.1.19>		Failed Shuffles=0
+wc-YARN-c19-10.3.1.19>		Merged Map outputs=16404
+wc-YARN-c19-10.3.1.19>		GC time elapsed (ms)=3283893
+wc-YARN-c19-10.3.1.19>		CPU time spent (ms)=85530930
+wc-YARN-c19-10.3.1.19>		Physical memory (bytes) snapshot=761454243840
+wc-YARN-c19-10.3.1.19>		Virtual memory (bytes) snapshot=5420223176704
+wc-YARN-c19-10.3.1.19>		Total committed heap usage (bytes)=570524958720
+wc-YARN-c19-10.3.1.19>	Shuffle Errors
+wc-YARN-c19-10.3.1.19>		BAD_ID=0
+wc-YARN-c19-10.3.1.19>		CONNECTION=0
+wc-YARN-c19-10.3.1.19>		IO_ERROR=0
+wc-YARN-c19-10.3.1.19>		WRONG_LENGTH=0
+wc-YARN-c19-10.3.1.19>		WRONG_MAP=0
+wc-YARN-c19-10.3.1.19>		WRONG_REDUCE=0
+wc-YARN-c19-10.3.1.19>	File Input Format Counters 
+wc-YARN-c19-10.3.1.19>		Bytes Read=340326116579
+wc-YARN-c19-10.3.1.19>	File Output Format Counters 
+wc-YARN-c19-10.3.1.19>		Bytes Written=100604155601
+----------------------------------
+mIP 10.3.1.19 Global Aggregation Start Time = 1421654942462
+----------------------------------
+wc-YARN-c19-10.3.1.19>15/01/19 16:06:03 INFO Configuration.deprecation: fs.default.name is deprecated. Instead, use fs.defaultFS
+wc-YARN-c19-10.3.1.19> userName = hpds
+wc-YARN-c19-10.3.1.19> hadoop_home = /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+wc-YARN-c19-10.3.1.19> outputPath = c19_wc-YARN_OUT_20150119143706
+wc-YARN-c19-10.3.1.19> srcHDFS = hdfs://c19:39100/
+wc-YARN-c19-10.3.1.19>RegionCloud Distcp [/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop distcp hdfs://c19:39100/user/hpds/c19_wc-YARN_OUT_20150119143706 hdfs://c02:39100/user/hpds/c19_wc-YARN_OUT_20150119143706]
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:06 INFO tools.DistCp: Input Options: DistCpOptions{atomicCommit=false, syncFolder=false, deleteMissing=false, ignoreFailures=false, maxMaps=20, sslConfigurationFile='null', copyStrategy='uniformsize', sourceFileListing=null, sourcePaths=[hdfs://c19:39100/user/hpds/c19_wc-YARN_OUT_20150119143706], targetPath=hdfs://c02:39100/user/hpds/c19_wc-YARN_OUT_20150119143706}
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:09 INFO client.RMProxy: Connecting to ResourceManager at c19/10.3.1.19:40832
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:13 INFO Configuration.deprecation: io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:13 INFO Configuration.deprecation: io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:13 INFO client.RMProxy: Connecting to ResourceManager at c19/10.3.1.19:40832
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:14 INFO mapreduce.JobSubmitter: number of splits:7
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:14 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1421649102131_0002
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:14 INFO impl.YarnClientImpl: Submitted application application_1421649102131_0002
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:14 INFO mapreduce.Job: The url to track the job: http://c19:40888/proxy/application_1421649102131_0002/
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:14 INFO tools.DistCp: DistCp job-id: job_1421649102131_0002
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:14 INFO mapreduce.Job: Running job: job_1421649102131_0002
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:19 INFO mapreduce.Job: Job job_1421649102131_0002 running in uber mode : false
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:19 INFO mapreduce.Job:  map 0% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:29 INFO mapreduce.Job:  map 14% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:30 INFO mapreduce.Job:  map 43% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:33 INFO mapreduce.Job:  map 57% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:34 INFO mapreduce.Job:  map 71% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:35 INFO mapreduce.Job:  map 86% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:06:41 INFO mapreduce.Job:  map 100% reduce 0%
+wc-YARN-c07-10.3.1.7>15/01/19 16:06:46 INFO mapreduce.Job:  map 100% reduce 94%
+wc-YARN-c13-10.3.1.13>15/01/19 16:06:50 INFO mapreduce.Job: Job job_1421649106647_0001 completed successfully
+wc-YARN-c13-10.3.1.13>15/01/19 16:06:50 INFO mapreduce.Job: Counters: 52
+wc-YARN-c13-10.3.1.13>	File System Counters
+wc-YARN-c13-10.3.1.13>		FILE: Number of bytes read=519602402355
+wc-YARN-c13-10.3.1.13>		FILE: Number of bytes written=658376423810
+wc-YARN-c13-10.3.1.13>		FILE: Number of read operations=0
+wc-YARN-c13-10.3.1.13>		FILE: Number of large read operations=0
+wc-YARN-c13-10.3.1.13>		FILE: Number of write operations=0
+wc-YARN-c13-10.3.1.13>		HDFS: Number of bytes read=340326496771
+wc-YARN-c13-10.3.1.13>		HDFS: Number of bytes written=100604025284
+wc-YARN-c13-10.3.1.13>		HDFS: Number of read operations=8220
+wc-YARN-c13-10.3.1.13>		HDFS: Number of large read operations=0
+wc-YARN-c13-10.3.1.13>		HDFS: Number of write operations=12
+wc-YARN-c13-10.3.1.13>	Job Counters 
+wc-YARN-c13-10.3.1.13>		Failed reduce tasks=2
+wc-YARN-c13-10.3.1.13>		Killed map tasks=1
+wc-YARN-c13-10.3.1.13>		Launched map tasks=2735
+wc-YARN-c13-10.3.1.13>		Launched reduce tasks=8
+wc-YARN-c13-10.3.1.13>		Data-local map tasks=2733
+wc-YARN-c13-10.3.1.13>		Rack-local map tasks=2
+wc-YARN-c13-10.3.1.13>		Total time spent by all maps in occupied slots (ms)=73495332
+wc-YARN-c13-10.3.1.13>		Total time spent by all reduces in occupied slots (ms)=29451072
+wc-YARN-c13-10.3.1.13>		Total time spent by all map tasks (ms)=73495332
+wc-YARN-c13-10.3.1.13>		Total time spent by all reduce tasks (ms)=29451072
+wc-YARN-c13-10.3.1.13>		Total vcore-seconds taken by all map tasks=73495332
+wc-YARN-c13-10.3.1.13>		Total vcore-seconds taken by all reduce tasks=29451072
+wc-YARN-c13-10.3.1.13>		Total megabyte-seconds taken by all map tasks=75259219968
+wc-YARN-c13-10.3.1.13>		Total megabyte-seconds taken by all reduce tasks=30157897728
+wc-YARN-c13-10.3.1.13>	Map-Reduce Framework
+wc-YARN-c13-10.3.1.13>		Map input records=5742140987
+wc-YARN-c13-10.3.1.13>		Map output records=19065173479
+wc-YARN-c13-10.3.1.13>		Map output bytes=412962168215
+wc-YARN-c13-10.3.1.13>		Map output materialized bytes=138620026272
+wc-YARN-c13-10.3.1.13>		Input split bytes=380192
+wc-YARN-c13-10.3.1.13>		Combine input records=21618522243
+wc-YARN-c13-10.3.1.13>		Combine output records=4926719039
+wc-YARN-c13-10.3.1.13>		Reduce input groups=1114319967
+wc-YARN-c13-10.3.1.13>		Reduce shuffle bytes=138620026272
+wc-YARN-c13-10.3.1.13>		Reduce input records=2373370275
+wc-YARN-c13-10.3.1.13>		Reduce output records=1114470677
+wc-YARN-c13-10.3.1.13>		Spilled Records=11368260095
+wc-YARN-c13-10.3.1.13>		Shuffled Maps =16404
+wc-YARN-c13-10.3.1.13>		Failed Shuffles=0
+wc-YARN-c13-10.3.1.13>		Merged Map outputs=16404
+wc-YARN-c13-10.3.1.13>		GC time elapsed (ms)=3549075
+wc-YARN-c13-10.3.1.13>		CPU time spent (ms)=86854280
+wc-YARN-c13-10.3.1.13>		Physical memory (bytes) snapshot=760852762624
+wc-YARN-c13-10.3.1.13>		Virtual memory (bytes) snapshot=5420509974528
+wc-YARN-c13-10.3.1.13>		Total committed heap usage (bytes)=570516570112
+wc-YARN-c13-10.3.1.13>	Shuffle Errors
+wc-YARN-c13-10.3.1.13>		BAD_ID=0
+wc-YARN-c13-10.3.1.13>		CONNECTION=0
+wc-YARN-c13-10.3.1.13>		IO_ERROR=0
+wc-YARN-c13-10.3.1.13>		WRONG_LENGTH=0
+wc-YARN-c13-10.3.1.13>		WRONG_MAP=0
+wc-YARN-c13-10.3.1.13>		WRONG_REDUCE=0
+wc-YARN-c13-10.3.1.13>	File Input Format Counters 
+wc-YARN-c13-10.3.1.13>		Bytes Read=340326116579
+wc-YARN-c13-10.3.1.13>	File Output Format Counters 
+wc-YARN-c13-10.3.1.13>		Bytes Written=100604025284
+----------------------------------
+mIP 10.3.1.13 Global Aggregation Start Time = 1421654993117
+----------------------------------
+wc-YARN-c13-10.3.1.13>15/01/19 16:06:52 INFO Configuration.deprecation: fs.default.name is deprecated. Instead, use fs.defaultFS
+wc-YARN-c13-10.3.1.13> userName = hpds
+wc-YARN-c13-10.3.1.13> hadoop_home = /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+wc-YARN-c13-10.3.1.13> outputPath = c13_wc-YARN_OUT_20150119143706
+wc-YARN-c13-10.3.1.13> srcHDFS = hdfs://c13:39100/
+wc-YARN-c13-10.3.1.13>RegionCloud Distcp [/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop distcp hdfs://c13:39100/user/hpds/c13_wc-YARN_OUT_20150119143706 hdfs://c02:39100/user/hpds/c13_wc-YARN_OUT_20150119143706]
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:53 INFO tools.DistCp: Input Options: DistCpOptions{atomicCommit=false, syncFolder=false, deleteMissing=false, ignoreFailures=false, maxMaps=20, sslConfigurationFile='null', copyStrategy='uniformsize', sourceFileListing=null, sourcePaths=[hdfs://c13:39100/user/hpds/c13_wc-YARN_OUT_20150119143706], targetPath=hdfs://c02:39100/user/hpds/c13_wc-YARN_OUT_20150119143706}
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:53 INFO client.RMProxy: Connecting to ResourceManager at c13/10.3.1.13:40832
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:54 INFO Configuration.deprecation: io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:54 INFO Configuration.deprecation: io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:54 INFO client.RMProxy: Connecting to ResourceManager at c13/10.3.1.13:40832
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:55 INFO mapreduce.JobSubmitter: number of splits:7
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:55 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1421649106647_0002
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:55 INFO impl.YarnClientImpl: Submitted application application_1421649106647_0002
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:55 INFO mapreduce.Job: The url to track the job: http://c13:40888/proxy/application_1421649106647_0002/
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:55 INFO tools.DistCp: DistCp job-id: job_1421649106647_0002
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:06:55 INFO mapreduce.Job: Running job: job_1421649106647_0002
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:07:12 INFO mapreduce.Job: Job job_1421649106647_0002 running in uber mode : false
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:07:12 INFO mapreduce.Job:  map 0% reduce 0%
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:07:16 INFO mapreduce.Job:  map 14% reduce 0%
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:07:22 INFO mapreduce.Job:  map 43% reduce 0%
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:07:25 INFO mapreduce.Job:  map 57% reduce 0%
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:07:26 INFO mapreduce.Job:  map 100% reduce 0%
+wc-YARN-c19-10.3.1.19>sockettimeout exeception occurs
+wc-YARN-c07-10.3.1.7>15/01/19 16:09:59 INFO mapreduce.Job:  map 100% reduce 95%
+wc-YARN-c07-10.3.1.7>15/01/19 16:12:36 INFO mapreduce.Job:  map 100% reduce 96%
+wc-YARN-c07-10.3.1.7>15/01/19 16:15:27 INFO mapreduce.Job:  map 100% reduce 97%
+wc-YARN-c07-10.3.1.7>15/01/19 16:18:22 INFO mapreduce.Job:  map 100% reduce 98%
+wc-YARN-c07-10.3.1.7>15/01/19 16:21:20 INFO mapreduce.Job:  map 100% reduce 99%
+wc-YARN-c07-10.3.1.7>15/01/19 16:24:08 INFO mapreduce.Job:  map 100% reduce 100%
+wc-YARN-c07-10.3.1.7>15/01/19 16:26:07 INFO mapreduce.Job: Job job_1421649107518_0001 completed successfully
+wc-YARN-c07-10.3.1.7>15/01/19 16:26:07 INFO mapreduce.Job: Counters: 51
+wc-YARN-c07-10.3.1.7>	File System Counters
+wc-YARN-c07-10.3.1.7>		FILE: Number of bytes read=520871199741
+wc-YARN-c07-10.3.1.7>		FILE: Number of bytes written=659645215716
+wc-YARN-c07-10.3.1.7>		FILE: Number of read operations=0
+wc-YARN-c07-10.3.1.7>		FILE: Number of large read operations=0
+wc-YARN-c07-10.3.1.7>		FILE: Number of write operations=0
+wc-YARN-c07-10.3.1.7>		HDFS: Number of bytes read=340326496771
+wc-YARN-c07-10.3.1.7>		HDFS: Number of bytes written=100604136707
+wc-YARN-c07-10.3.1.7>		HDFS: Number of read operations=8220
+wc-YARN-c07-10.3.1.7>		HDFS: Number of large read operations=0
+wc-YARN-c07-10.3.1.7>		HDFS: Number of write operations=12
+wc-YARN-c07-10.3.1.7>	Job Counters 
+wc-YARN-c07-10.3.1.7>		Failed reduce tasks=1
+wc-YARN-c07-10.3.1.7>		Launched map tasks=2734
+wc-YARN-c07-10.3.1.7>		Launched reduce tasks=7
+wc-YARN-c07-10.3.1.7>		Data-local map tasks=2727
+wc-YARN-c07-10.3.1.7>		Rack-local map tasks=7
+wc-YARN-c07-10.3.1.7>		Total time spent by all maps in occupied slots (ms)=75614866
+wc-YARN-c07-10.3.1.7>		Total time spent by all reduces in occupied slots (ms)=33443533
+wc-YARN-c07-10.3.1.7>		Total time spent by all map tasks (ms)=75614866
+wc-YARN-c07-10.3.1.7>		Total time spent by all reduce tasks (ms)=33443533
+wc-YARN-c07-10.3.1.7>		Total vcore-seconds taken by all map tasks=75614866
+wc-YARN-c07-10.3.1.7>		Total vcore-seconds taken by all reduce tasks=33443533
+wc-YARN-c07-10.3.1.7>		Total megabyte-seconds taken by all map tasks=77429622784
+wc-YARN-c07-10.3.1.7>		Total megabyte-seconds taken by all reduce tasks=34246177792
+wc-YARN-c07-10.3.1.7>	Map-Reduce Framework
+wc-YARN-c07-10.3.1.7>		Map input records=5742140987
+wc-YARN-c07-10.3.1.7>		Map output records=19065173479
+wc-YARN-c07-10.3.1.7>		Map output bytes=412962168215
+wc-YARN-c07-10.3.1.7>		Map output materialized bytes=138620026272
+wc-YARN-c07-10.3.1.7>		Input split bytes=380192
+wc-YARN-c07-10.3.1.7>		Combine input records=21618522243
+wc-YARN-c07-10.3.1.7>		Combine output records=4926719039
+wc-YARN-c07-10.3.1.7>		Reduce input groups=1114319967
+wc-YARN-c07-10.3.1.7>		Reduce shuffle bytes=138620026272
+wc-YARN-c07-10.3.1.7>		Reduce input records=2373370275
+wc-YARN-c07-10.3.1.7>		Reduce output records=1114470677
+wc-YARN-c07-10.3.1.7>		Spilled Records=11372844605
+wc-YARN-c07-10.3.1.7>		Shuffled Maps =16404
+wc-YARN-c07-10.3.1.7>		Failed Shuffles=0
+wc-YARN-c07-10.3.1.7>		Merged Map outputs=16404
+wc-YARN-c07-10.3.1.7>		GC time elapsed (ms)=4046434
+wc-YARN-c07-10.3.1.7>		CPU time spent (ms)=88567560
+wc-YARN-c07-10.3.1.7>		Physical memory (bytes) snapshot=760192040960
+wc-YARN-c07-10.3.1.7>		Virtual memory (bytes) snapshot=5420474441728
+wc-YARN-c07-10.3.1.7>		Total committed heap usage (bytes)=570456276992
+wc-YARN-c07-10.3.1.7>	Shuffle Errors
+wc-YARN-c07-10.3.1.7>		BAD_ID=0
+wc-YARN-c07-10.3.1.7>		CONNECTION=0
+wc-YARN-c07-10.3.1.7>		IO_ERROR=0
+wc-YARN-c07-10.3.1.7>		WRONG_LENGTH=0
+wc-YARN-c07-10.3.1.7>		WRONG_MAP=0
+wc-YARN-c07-10.3.1.7>		WRONG_REDUCE=0
+wc-YARN-c07-10.3.1.7>	File Input Format Counters 
+wc-YARN-c07-10.3.1.7>		Bytes Read=340326116579
+wc-YARN-c07-10.3.1.7>	File Output Format Counters 
+wc-YARN-c07-10.3.1.7>		Bytes Written=100604136707
+----------------------------------
+mIP 10.3.1.7 Global Aggregation Start Time = 1421656149224
+----------------------------------
+wc-YARN-c07-10.3.1.7>15/01/19 16:26:09 INFO Configuration.deprecation: fs.default.name is deprecated. Instead, use fs.defaultFS
+wc-YARN-c07-10.3.1.7> userName = hpds
+wc-YARN-c07-10.3.1.7> hadoop_home = /home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1
+wc-YARN-c07-10.3.1.7> outputPath = c07_wc-YARN_OUT_20150119143706
+wc-YARN-c07-10.3.1.7> srcHDFS = hdfs://c07:39100/
+wc-YARN-c07-10.3.1.7>RegionCloud Distcp [/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/bin/hadoop distcp hdfs://c07:39100/user/hpds/c07_wc-YARN_OUT_20150119143706 hdfs://c02:39100/user/hpds/c07_wc-YARN_OUT_20150119143706]
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:11 INFO tools.DistCp: Input Options: DistCpOptions{atomicCommit=false, syncFolder=false, deleteMissing=false, ignoreFailures=false, maxMaps=20, sslConfigurationFile='null', copyStrategy='uniformsize', sourceFileListing=null, sourcePaths=[hdfs://c07:39100/user/hpds/c07_wc-YARN_OUT_20150119143706], targetPath=hdfs://c02:39100/user/hpds/c07_wc-YARN_OUT_20150119143706}
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:12 INFO client.RMProxy: Connecting to ResourceManager at c07/10.3.1.7:40832
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:15 INFO Configuration.deprecation: io.sort.mb is deprecated. Instead, use mapreduce.task.io.sort.mb
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:15 INFO Configuration.deprecation: io.sort.factor is deprecated. Instead, use mapreduce.task.io.sort.factor
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:15 INFO client.RMProxy: Connecting to ResourceManager at c07/10.3.1.7:40832
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:17 INFO mapreduce.JobSubmitter: number of splits:7
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:19 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1421649107518_0002
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:19 INFO impl.YarnClientImpl: Submitted application application_1421649107518_0002
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:20 INFO mapreduce.Job: The url to track the job: http://c07:40888/proxy/application_1421649107518_0002/
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:20 INFO tools.DistCp: DistCp job-id: job_1421649107518_0002
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:20 INFO mapreduce.Job: Running job: job_1421649107518_0002
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:25 INFO mapreduce.Job: Job job_1421649107518_0002 running in uber mode : false
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:25 INFO mapreduce.Job:  map 0% reduce 0%
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:28 INFO mapreduce.Job:  map 14% reduce 0%
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:34 INFO mapreduce.Job:  map 29% reduce 0%
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:35 INFO mapreduce.Job:  map 57% reduce 0%
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:38 INFO mapreduce.Job:  map 86% reduce 0%
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:26:43 INFO mapreduce.Job:  map 100% reduce 0%
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:53:59 INFO mapreduce.Job: Job job_1421649102131_0002 completed successfully
+wc-YARN-c19-10.3.1.19>Distcp_>15/01/19 16:53:59 INFO mapreduce.Job: Counters: 33
+wc-YARN-c19-10.3.1.19>Distcp_>	File System Counters
+wc-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of bytes read=0
+wc-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of bytes written=667730
+wc-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of read operations=0
+wc-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of large read operations=0
+wc-YARN-c19-10.3.1.19>Distcp_>		FILE: Number of write operations=0
+wc-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of bytes read=100604159386
+wc-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of bytes written=100604155601
+wc-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of read operations=130
+wc-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of large read operations=0
+wc-YARN-c19-10.3.1.19>Distcp_>		HDFS: Number of write operations=28
+wc-YARN-c19-10.3.1.19>Distcp_>	Job Counters 
+wc-YARN-c19-10.3.1.19>Distcp_>		Launched map tasks=7
+wc-YARN-c19-10.3.1.19>Distcp_>		Other local map tasks=7
+wc-YARN-c19-10.3.1.19>Distcp_>		Total time spent by all maps in occupied slots (ms)=13170203
+wc-YARN-c19-10.3.1.19>Distcp_>		Total time spent by all reduces in occupied slots (ms)=0
+wc-YARN-c19-10.3.1.19>Distcp_>		Total time spent by all map tasks (ms)=13170203
+wc-YARN-c19-10.3.1.19>Distcp_>		Total vcore-seconds taken by all map tasks=13170203
+wc-YARN-c19-10.3.1.19>Distcp_>		Total megabyte-seconds taken by all map tasks=13486287872
+wc-YARN-c19-10.3.1.19>Distcp_>	Map-Reduce Framework
+wc-YARN-c19-10.3.1.19>Distcp_>		Map input records=7
+wc-YARN-c19-10.3.1.19>Distcp_>		Map output records=0
+wc-YARN-c19-10.3.1.19>Distcp_>		Input split bytes=938
+wc-YARN-c19-10.3.1.19>Distcp_>		Spilled Records=0
+wc-YARN-c19-10.3.1.19>Distcp_>		Failed Shuffles=0
+wc-YARN-c19-10.3.1.19>Distcp_>		Merged Map outputs=0
+wc-YARN-c19-10.3.1.19>Distcp_>		GC time elapsed (ms)=21074
+wc-YARN-c19-10.3.1.19>Distcp_>		CPU time spent (ms)=1091780
+wc-YARN-c19-10.3.1.19>Distcp_>		Physical memory (bytes) snapshot=1336414208
+wc-YARN-c19-10.3.1.19>Distcp_>		Virtual memory (bytes) snapshot=13903622144
+wc-YARN-c19-10.3.1.19>Distcp_>		Total committed heap usage (bytes)=807403520
+wc-YARN-c19-10.3.1.19>Distcp_>	File Input Format Counters 
+wc-YARN-c19-10.3.1.19>Distcp_>		Bytes Read=2847
+wc-YARN-c19-10.3.1.19>Distcp_>	File Output Format Counters 
+wc-YARN-c19-10.3.1.19>Distcp_>		Bytes Written=0
+wc-YARN-c19-10.3.1.19>Distcp_>	org.apache.hadoop.tools.mapred.CopyMapper$Counter
+wc-YARN-c19-10.3.1.19>Distcp_>		BYTESCOPIED=100604155601
+wc-YARN-c19-10.3.1.19>Distcp_>		BYTESEXPECTED=100604155601
+wc-YARN-c19-10.3.1.19>Distcp_>		COPY=7
+wc-YARN-c19-10.3.1.19>Server To Join
+wc-YARN-c19-10.3.1.19>send REQ_MIGRATE_DATA_FINISHED
+Top Cloud Recv MIGRATE Data Finished
+wc-YARN-c19-10.3.1.19>Stop Server
+wc-YARN-c19-10.3.1.19>sockettimeout exeception occurs
+----------------------------------
+mIP 10.3.1.19 Global Aggreagtion End Time = 1421657821969
+----------------------------------
+wc-YARN-c19-10.3.1.19>Region Cloud Recvied Bye
+wc-YARN-c19-10.3.1.19>java.net.SocketTimeoutException: Accept timed out
+wc-YARN-c19-10.3.1.19>	at java.net.PlainSocketImpl.socketAccept(Native Method)
+wc-YARN-c19-10.3.1.19>	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+wc-YARN-c19-10.3.1.19>	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+wc-YARN-c19-10.3.1.19>	at java.net.ServerSocket.accept(ServerSocket.java:513)
+wc-YARN-c19-10.3.1.19>Region Cloud Server Closed
+wc-YARN-c19-10.3.1.19>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:66)
+wc-YARN-c19-10.3.1.19>Region Cloud Report : RegionCloudsTime = 5510339(ms)
+wc-YARN-c19-10.3.1.19>Region Cloud Report : GlobalAggregationTime = 2940924(ms)
+wc-YARN-c19-10.3.1.19>15/01/19 16:55:03 INFO ipc.Client: Retrying connect to server: c21/10.3.1.21:49724. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c19-10.3.1.19>15/01/19 16:55:04 INFO ipc.Client: Retrying connect to server: c21/10.3.1.21:49724. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c19-10.3.1.19>15/01/19 16:55:05 INFO ipc.Client: Retrying connect to server: c21/10.3.1.21:49724. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c19-10.3.1.19>15/01/19 16:55:05 INFO mapred.ClientServiceDelegate: Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:58:58 INFO mapreduce.Job: Job job_1421649107518_0002 completed successfully
+wc-YARN-c07-10.3.1.7>Distcp_>15/01/19 16:58:58 INFO mapreduce.Job: Counters: 33
+wc-YARN-c07-10.3.1.7>Distcp_>	File System Counters
+wc-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of bytes read=0
+wc-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of bytes written=667737
+wc-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of read operations=0
+wc-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of large read operations=0
+wc-YARN-c07-10.3.1.7>Distcp_>		FILE: Number of write operations=0
+wc-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of bytes read=100604140499
+wc-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of bytes written=100604136707
+wc-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of read operations=130
+wc-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of large read operations=0
+wc-YARN-c07-10.3.1.7>Distcp_>		HDFS: Number of write operations=28
+wc-YARN-c07-10.3.1.7>Distcp_>	Job Counters 
+wc-YARN-c07-10.3.1.7>Distcp_>		Launched map tasks=7
+wc-YARN-c07-10.3.1.7>Distcp_>		Other local map tasks=7
+wc-YARN-c07-10.3.1.7>Distcp_>		Total time spent by all maps in occupied slots (ms)=11186854
+wc-YARN-c07-10.3.1.7>Distcp_>		Total time spent by all reduces in occupied slots (ms)=0
+wc-YARN-c07-10.3.1.7>Distcp_>		Total time spent by all map tasks (ms)=11186854
+wc-YARN-c07-10.3.1.7>Distcp_>		Total vcore-seconds taken by all map tasks=11186854
+wc-YARN-c07-10.3.1.7>Distcp_>		Total megabyte-seconds taken by all map tasks=11455338496
+wc-YARN-c07-10.3.1.7>Distcp_>	Map-Reduce Framework
+wc-YARN-c07-10.3.1.7>Distcp_>		Map input records=7
+wc-YARN-c07-10.3.1.7>Distcp_>		Map output records=0
+wc-YARN-c07-10.3.1.7>Distcp_>		Input split bytes=945
+wc-YARN-c07-10.3.1.7>Distcp_>		Spilled Records=0
+wc-YARN-c07-10.3.1.7>Distcp_>		Failed Shuffles=0
+wc-YARN-c07-10.3.1.7>Distcp_>		Merged Map outputs=0
+wc-YARN-c07-10.3.1.7>Distcp_>		GC time elapsed (ms)=18038
+wc-YARN-c07-10.3.1.7>Distcp_>		CPU time spent (ms)=1045430
+wc-YARN-c07-10.3.1.7>Distcp_>		Physical memory (bytes) snapshot=1365852160
+wc-YARN-c07-10.3.1.7>Distcp_>		Virtual memory (bytes) snapshot=13919518720
+wc-YARN-c07-10.3.1.7>Distcp_>		Total committed heap usage (bytes)=843579392
+wc-YARN-c07-10.3.1.7>Distcp_>	File Input Format Counters 
+wc-YARN-c07-10.3.1.7>Distcp_>		Bytes Read=2847
+wc-YARN-c07-10.3.1.7>Distcp_>	File Output Format Counters 
+wc-YARN-c07-10.3.1.7>Distcp_>		Bytes Written=0
+wc-YARN-c07-10.3.1.7>Distcp_>	org.apache.hadoop.tools.mapred.CopyMapper$Counter
+wc-YARN-c07-10.3.1.7>Distcp_>		BYTESCOPIED=100604136707
+wc-YARN-c07-10.3.1.7>Distcp_>		BYTESEXPECTED=100604136707
+wc-YARN-c07-10.3.1.7>Distcp_>		COPY=7
+wc-YARN-c07-10.3.1.7>Server To Join
+wc-YARN-c07-10.3.1.7>send REQ_MIGRATE_DATA_FINISHED
+Top Cloud Recv MIGRATE Data Finished
+wc-YARN-c07-10.3.1.7>Stop Server
+wc-YARN-c07-10.3.1.7>sockettimeout exeception occurs
+----------------------------------
+mIP 10.3.1.7 Global Aggreagtion End Time = 1421658121239
+----------------------------------
+wc-YARN-c07-10.3.1.7>Region Cloud Recvied Bye
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:59:47 INFO mapreduce.Job: Job job_1421649106647_0002 completed successfully
+wc-YARN-c13-10.3.1.13>Distcp_>15/01/19 16:59:47 INFO mapreduce.Job: Counters: 33
+wc-YARN-c13-10.3.1.13>Distcp_>	File System Counters
+wc-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of bytes read=0
+wc-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of bytes written=667751
+wc-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of read operations=0
+wc-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of large read operations=0
+wc-YARN-c13-10.3.1.13>Distcp_>		FILE: Number of write operations=0
+wc-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of bytes read=100604029076
+wc-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of bytes written=100604025284
+wc-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of read operations=130
+wc-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of large read operations=0
+wc-YARN-c13-10.3.1.13>Distcp_>		HDFS: Number of write operations=28
+wc-YARN-c13-10.3.1.13>Distcp_>	Job Counters 
+wc-YARN-c13-10.3.1.13>Distcp_>		Launched map tasks=7
+wc-YARN-c13-10.3.1.13>Distcp_>		Other local map tasks=7
+wc-YARN-c13-10.3.1.13>Distcp_>		Total time spent by all maps in occupied slots (ms)=15943601
+wc-YARN-c13-10.3.1.13>Distcp_>		Total time spent by all reduces in occupied slots (ms)=0
+wc-YARN-c13-10.3.1.13>Distcp_>		Total time spent by all map tasks (ms)=15943601
+wc-YARN-c13-10.3.1.13>Distcp_>		Total vcore-seconds taken by all map tasks=15943601
+wc-YARN-c13-10.3.1.13>Distcp_>		Total megabyte-seconds taken by all map tasks=16326247424
+wc-YARN-c13-10.3.1.13>Distcp_>	Map-Reduce Framework
+wc-YARN-c13-10.3.1.13>Distcp_>		Map input records=7
+wc-YARN-c13-10.3.1.13>Distcp_>		Map output records=0
+wc-YARN-c13-10.3.1.13>Distcp_>		Input split bytes=945
+wc-YARN-c13-10.3.1.13>Distcp_>		Spilled Records=0
+wc-YARN-c13-10.3.1.13>Distcp_>		Failed Shuffles=0
+wc-YARN-c13-10.3.1.13>Distcp_>		Merged Map outputs=0
+wc-YARN-c13-10.3.1.13>Distcp_>		GC time elapsed (ms)=25371
+wc-YARN-c13-10.3.1.13>Distcp_>		CPU time spent (ms)=1174140
+wc-YARN-c13-10.3.1.13>Distcp_>		Physical memory (bytes) snapshot=1361383424
+wc-YARN-c13-10.3.1.13>Distcp_>		Virtual memory (bytes) snapshot=13898334208
+wc-YARN-c13-10.3.1.13>Distcp_>		Total committed heap usage (bytes)=850919424
+wc-YARN-c13-10.3.1.13>Distcp_>	File Input Format Counters 
+wc-YARN-c13-10.3.1.13>Distcp_>		Bytes Read=2847
+wc-YARN-c13-10.3.1.13>Distcp_>	File Output Format Counters 
+wc-YARN-c13-10.3.1.13>Distcp_>		Bytes Written=0
+wc-YARN-c13-10.3.1.13>Distcp_>	org.apache.hadoop.tools.mapred.CopyMapper$Counter
+wc-YARN-c13-10.3.1.13>Distcp_>		BYTESCOPIED=100604025284
+wc-YARN-c13-10.3.1.13>Distcp_>		BYTESEXPECTED=100604025284
+wc-YARN-c13-10.3.1.13>Distcp_>		COPY=7
+wc-YARN-c13-10.3.1.13>Server To Join
+wc-YARN-c13-10.3.1.13>send REQ_MIGRATE_DATA_FINISHED
+Top Cloud Recv MIGRATE Data Finished
+wc-YARN-c13-10.3.1.13>Stop Server
+wc-YARN-c13-10.3.1.13>sockettimeout exeception occurs
+----------------------------------
+mIP 10.3.1.13 Global Aggreagtion End Time = 1421658170824
+----------------------------------
+wc-YARN-c13-10.3.1.13>Region Cloud Recvied Bye
+wc-YARN-c07-10.3.1.7>java.net.SocketTimeoutException: Accept timed out
+wc-YARN-c07-10.3.1.7>	at java.net.PlainSocketImpl.socketAccept(Native Method)
+wc-YARN-c07-10.3.1.7>	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+wc-YARN-c07-10.3.1.7>	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+wc-YARN-c07-10.3.1.7>	at java.net.ServerSocket.accept(ServerSocket.java:513)
+wc-YARN-c07-10.3.1.7>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:66)
+wc-YARN-c07-10.3.1.7>Region Cloud Server Closed
+wc-YARN-c07-10.3.1.7>Region Cloud Report : RegionCloudsTime = 6714820(ms)
+wc-YARN-c07-10.3.1.7>Region Cloud Report : GlobalAggregationTime = 2033181(ms)
+wc-YARN-c07-10.3.1.7>15/01/19 17:00:01 INFO ipc.Client: Retrying connect to server: c11/10.3.1.11:60167. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c07-10.3.1.7>15/01/19 17:00:02 INFO ipc.Client: Retrying connect to server: c11/10.3.1.11:60167. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c07-10.3.1.7>15/01/19 17:00:03 INFO ipc.Client: Retrying connect to server: c11/10.3.1.11:60167. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c07-10.3.1.7>15/01/19 17:00:03 INFO mapred.ClientServiceDelegate: Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+wc-YARN-c13-10.3.1.13>java.net.SocketTimeoutException: Accept timed out
+wc-YARN-c13-10.3.1.13>	at java.net.PlainSocketImpl.socketAccept(Native Method)
+wc-YARN-c13-10.3.1.13>	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:404)
+wc-YARN-c13-10.3.1.13>	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+wc-YARN-c13-10.3.1.13>Region Cloud Server Closed
+wc-YARN-c13-10.3.1.13>	at java.net.ServerSocket.accept(ServerSocket.java:513)
+wc-YARN-c13-10.3.1.13>	at ncku.hpds.fed.MRv2.FedCloudMonitorServer.run(FedCloudMonitorServer.java:66)
+wc-YARN-c13-10.3.1.13>Region Cloud Report : RegionCloudsTime = 5558521(ms)
+wc-YARN-c13-10.3.1.13>Region Cloud Report : GlobalAggregationTime = 3238942(ms)
+wc-YARN-c13-10.3.1.13>15/01/19 17:00:50 INFO ipc.Client: Retrying connect to server: c13/10.3.1.13:49450. Already tried 0 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c13-10.3.1.13>15/01/19 17:00:51 INFO ipc.Client: Retrying connect to server: c13/10.3.1.13:49450. Already tried 1 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c13-10.3.1.13>15/01/19 17:00:52 INFO ipc.Client: Retrying connect to server: c13/10.3.1.13:49450. Already tried 2 time(s); retry policy is RetryUpToMaximumCountWithFixedSleep(maxRetries=3, sleepTime=1000 MILLISECONDS)
+wc-YARN-c13-10.3.1.13>15/01/19 17:00:52 INFO mapred.ClientServiceDelegate: Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+FedRegionCloudJob All Joined
+TopCloud Report : RegionCloud End Time = 8807338(ms)
+TopCloud Report : RegionCloud Total Time = 8807338(ms)
+----------------------------------
+Map-ProxyReduce Phrase Finished
+----------------------------------
+
+----------------------------------
+Global Aggregation Start ...
+----------------------------------
+Wait For FedCouldMonitorClient Join
+FedCouldMonitorClient All Joined
+Top Cloud Report : Global Aggregation Consuming Time :
+mIP 10.3.1.7 Intermediate data Aggregation Time = 1972015(ms)
+mIP 10.3.1.13 Intermediate data Aggregation Time = 3177707(ms)
+mIP 10.3.1.19 Intermediate data Aggregation Time = 2879507(ms)
+----------------------------------
+Global Aggregation End ...
+----------------------------------
+Select ProxyMapper : ncku.hpds.fed.MRv2.ProxySelector.ProxyMapperTextInt
+----------------------------------
+TopCloud Start Time = 1421658236590
+----------------------------------
+----------------------------------
+TopCloudEnd() = 1421663383293
+----------------------------------
+Top Cloud Report : RegionCloud Work Time = 8807338(ms)
+Top Cloud Report : Top Cloud Work Time = 5146703(ms)
+Top Cloud Report : Global Aggregation Time Details : 
+mIP 10.3.1.7 Intermediate data Aggregation Time = 1972015(ms)
+mIP 10.3.1.13 Intermediate data Aggregation Time = 3177707(ms)
+mIP 10.3.1.19 Intermediate data Aggregation Time = 2879507(ms)
+Top Cloud Report : Total Global Aggregation Time = 8029229(ms)
+actual Aggregation Time = 3228362(ms)
+total time = 1.7182403E7 (ms), 17182.403(s)
