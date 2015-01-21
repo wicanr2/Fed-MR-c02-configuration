@@ -13,7 +13,7 @@
         	<JobName>WordCount-YARN</JobName>
 		<MainClass></MainClass>
 		<OtherArgs>wordcount1</OtherArgs>
-		<Arg0>6G</Arg0>
+		<Arg0>320Ga</Arg0>
 		<Arg1>dummy</Arg1>
 	</RegionCloud>
 
@@ -24,7 +24,7 @@
         	<JobName>WordCount-YARN</JobName>
 		<MainClass></MainClass>
 		<OtherArgs>wordcount1</OtherArgs>
-		<Arg0>6G</Arg0>
+		<Arg0>320Ga</Arg0>
 		<Arg1>dummy</Arg1>
 	</RegionCloud>
 
@@ -35,7 +35,7 @@
         	<JobName>WordCount-YARN</JobName>
 		<MainClass></MainClass>
 		<OtherArgs>wordcount1</OtherArgs>
-		<Arg0>6G</Arg0>
+		<Arg0>320Ga</Arg0>
 		<Arg1>dummy</Arg1>
 	</RegionCloud>
 <!--

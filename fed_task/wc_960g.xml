@@ -1,7 +1,7 @@
 <FedHadoop>
 	<TopCloud>
 		<CloudAddress>10.3.1.2</CloudAddress>
-        	<JobName>Grep-YARN</JobName>
+        	<JobName>WordCount-YARN</JobName>
 		<JarPath>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1/hadoop-mapreduce-examples-2.4.1.jar</JarPath>
 	</TopCloud>
     	<!-- Region Cloud Configuration -->
@@ -10,33 +10,39 @@
 		<Name>c07</Name>
 		<CloudAddress>10.3.1.7</CloudAddress>
 		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
-        	<JobName>Grep-YARN</JobName>
-		<MainClass>grep</MainClass>
-		<OtherArgs>160Grand</OtherArgs>
-		<Arg0>grepOut</Arg0>
-		<Arg1>d*</Arg1>
+        	<JobName>WordCount-YARN</JobName>
+		<MainClass>wordcount</MainClass>
+		<OtherArgs>320Ga</OtherArgs>
+<!--
+		<Arg0></Arg0>
+		<Arg1>dummy</Arg1>
+-->
 	</RegionCloud>
 
 	<RegionCloud>
 		<Name>c13</Name>
 		<CloudAddress>10.3.1.13</CloudAddress>
 		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
-        	<JobName>Grep-YARN</JobName>
-		<MainClass>grep</MainClass>
-		<OtherArgs>160Grand</OtherArgs>
-		<Arg0>grepOut</Arg0>
-		<Arg1>d*</Arg1>
+        	<JobName>WordCount-YARN</JobName>
+		<MainClass>wordcount</MainClass>
+		<OtherArgs>320Ga</OtherArgs>
+<!--
+		<Arg0></Arg0>
+		<Arg1>dummy</Arg1>
+-->
 	</RegionCloud>
 
 	<RegionCloud>
 		<Name>c19</Name>
 		<CloudAddress>10.3.1.19</CloudAddress>
 		<HadoopHome>/home/hpds/zien/FedMR-hadoop-2.4.1-time/hadoop-2.4.1</HadoopHome>
-        	<JobName>Grep-YARN</JobName>
-		<MainClass>grep</MainClass>
-		<OtherArgs>160Grand</OtherArgs>
-		<Arg0>grepOut</Arg0>
-		<Arg1>d*</Arg1>
+        	<JobName>WordCount-YARN</JobName>
+		<MainClass>wordcount</MainClass>
+		<OtherArgs>320Ga</OtherArgs>
+<!--
+		<Arg0>320Ga</Arg0>
+		<Arg1>dummy</Arg1>
+-->
 	</RegionCloud>
 <!--
 	<RegionCloud>

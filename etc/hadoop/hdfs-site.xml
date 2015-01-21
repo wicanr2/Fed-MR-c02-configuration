@@ -17,7 +17,10 @@ limitations under the License. See accompanying LICENSE file.
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
+<property>
+  <name>dfs.safemode.threshold-pct</name>
+  <value>0.01</value>
+</property>
 <property>
   <name>dfs.replication</name>
   <value>2</value>
@@ -77,5 +80,8 @@ limitations under the License. See accompanying LICENSE file.
   <name>dfs.namenode.backup.http-address</name>
   <value>c02:39405</value>
 </property>
-
+<property>
+  <name>dfs.namenode.resource.du.reserved</name>
+  <value>10737418240</value>
+</property>
 </configuration>
